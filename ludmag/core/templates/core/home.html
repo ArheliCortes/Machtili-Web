@@ -1,0 +1,126 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block content %}
+  <div class="hero-wrap" style="background-image: url('{%static 'core/images/bg_1.jpg' %}');" data-stellar-background-ratio="0.5">
+      <div class="container">
+          <div class="row slider-text align-items-center">
+            <div class="col-md-6 ftco-animate d-flex justify-content-start">
+              <div class="text ">
+                  <h1 class="mb-4 opct opacity-40">Tú hijo merece una educación de calidad sin importar donde se encuentre</h1>
+                  <p class="py-3"><a href="#section-plans" class="btn btn-primary float-left py-3 ">VER PLANES</a> 
+                
+              </div>
+            </div>
+            <div class="col-md-6 ftco-animate d-flex justify-content-end">
+  <!--===========================FORMULARIO========================================================-->
+                <section class="formulario "> 
+                  <div class="main">
+                    <div class="container-form">
+                        <form method="POST" class="appointment-form" action="{% url 'home' %}" enctype = "multipart/form-data"    id="appointment-form">
+                            <h2>Recibe información</h2>
+                            <p >Al recibir tu información, uno de nuestros asesores académicos se comunicará contigo.</p><br>
+                            {% csrf_token %}
+                            <div class="form-group-1 ">
+                              
+                                {{form}}
+                            </div>
+                            
+                            <div class="form-submit">
+                                <input type="submit" name="submit" id="submit" class="submit" value="¡Quiero saber más!" />
+                            </div>
+                        </form>
+                    </div>
+                  </div> <!--fin main-->
+                </section>  
+            </div>
+
+          </div>
+        </div><!--fin container-1-->
+      <!-- ===============================Section Nostros =================================-->
+        <section class="ftco-section ftco-no-pb ftco-no-pt " id="section-about">
+        <div class="container">
+          <div class="row">
+            
+            <div class="col-md-12 wrap-about px-md-5 ftco-animate py-5 bg-white ">
+              <div class="heading-section text-center">
+                <span class="subheading ">¿QUÉ ES LUDI MAGISTRI?</span>
+                <br>
+                <p class="italic">Somos un grupo de maestros enfocados en el correcto aprendizaje de nuestros
+                  alumnos aplicando métodos personalizados e innovadores de <b>enseñanza en línea
+                  </b> a cualquier nivel. Nuestro objetivo es guiarlos al éxito junto a una excelente
+                comunicación y un estricto seguimiento de sus avances.</p>
+                <br>
+                <p class="text-size-18">¡Áyuda a tus hijos a seguir adelante en su carrera al éxito con Ludi Magistri!</p>
+            
+            
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ===============================Section Planes=================================-->
+        <section class="ftco-section bg-light" id="section-plans">
+          <div class="container">
+            <div class="row justify-content-center pb-5 mb-3">
+              <div class="col-md-7 heading-section text-center ftco-animate">
+                <span class="subheading">Oferta Educativa/Planes</span>
+                <p>En Ludi Magistri manejamos un servicio de <b>primer nivel</b> que ponemos a tu
+                alcance en 3 diferentes planes.</p>
+              </div>
+            </div>
+            <div class="row">
+                  <div class="col-md-4 ftco-animate d-flex">
+                    <div class="block-7 pink-block w-100">
+                      <div class="text-center">
+                    
+                        <span class="excerpt d-block">Básico</span>
+                        <ul class="pricing-text mb-5">
+                          <li><span class="fa fa-check mr-2"></span>8 clases de una hora</li>
+                          <li><span class="fa fa-check mr-2"></span>Atención de dudas de forma remota en un horario de 3 p.m. a 6 p.m.</li>
+                      
+                        </ul>
+
+                        <a href="#" class="btn btn-primary d-block px-2 py-3">Más información</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 ftco-animate d-flex">
+                    <div class="block-7 orange-block w-100">
+                      <div class="text-center">
+                      
+                        <span class="excerpt d-block">Avanzado</span>
+                        <ul class="pricing-text mb-5">
+                        <li><span class="fa fa-check mr-2"></span>12 clases de una hora</li>
+                          <li><span class="fa fa-check mr-2"></span>Atención de dudas de forma remota en un horario de 9 a.m. a 9 p.m.</li>
+                          <li><span class="fa fa-check mr-2"></span>Asesoría para la solución de tareas</li>
+                  
+                        </ul>
+
+                        <a href="#" class="btn btn-primary d-block px-2 py-3">Más información</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 ftco-animate d-flex">
+                    <div class="block-7 green-block w-100">
+                      <div class="text-center">
+                      
+                        <span class="excerpt d-block">Premium</span>
+                        <ul class="pricing-text mb-5">
+                          <li><span class="fa fa-check mr-2"></span>20 clases de una hora</li>
+                          <li><span class="fa fa-check mr-2"></span>Atención de dudas de forma remota en un horario de 9 a.m. a 9 p.m.</li>
+                          <li><span class="fa fa-check mr-2"></span>Asesoría para la solución de tareas</li>
+                          <li><span class="fa fa-check mr-2"></span>Acceso ilimitado de material adicional para presente en la página</li>
+
+                        </ul>
+
+                        <a href="#" class="btn btn-primary d-block px-2 py-3">Más información</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+{% endblock  %}

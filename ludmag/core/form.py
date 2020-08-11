@@ -2,7 +2,7 @@ from django import forms
 
 # iterable 
 COURSE_CHOICES =( 
-    ("1", "Primero año de Primaria"), 
+    ("1", "Primer año de Primaria"), 
     ("2", "Segundo año de Primaria"), 
     ("3", "Tercer año de Primaria"), 
     ("4", "Cuarto año de Primaria"), 
@@ -24,6 +24,6 @@ class Formulario (forms.Form) :
     lastname = forms.CharField(label='',widget=forms.TextInput(attrs={'placeholder': 'Apellido'}),error_messages={'required': 'Completa este campo'}, max_length=100)
     email = forms.EmailField(label='',widget=forms.TextInput(attrs={'placeholder': 'Correo'}),error_messages={'required': 'Completa este campo'})
     phone = forms.IntegerField(label='',widget=forms.TextInput(attrs={'placeholder': 'Télefono'}),error_messages={'required': 'Completa este campo'})
-    course =  forms.ChoiceField(label='',choices = COURSE_CHOICES) 
+    grade =  forms.ChoiceField(label='',choices = COURSE_CHOICES) 
     plan = forms.ChoiceField(label='',choices = PLAN_CHOICES)
 

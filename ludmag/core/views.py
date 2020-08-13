@@ -32,7 +32,7 @@ def sendEmail(request):
         
         subject =  "Machtili - Un nuevo cliente solicita información"
         from_email = settings.EMAIL_HOST_USER
-        to = form.cleaned_data['humad.ludimagistri@gmail.com']
+        to = 'humad.ludimagistri@gmail.com'
 
         text_content = "Contactate con :"+name+" "+lastname+"tel: "+str(phone)+" Le interesa el  plan:"+plan_opt+" del grado:"+grade_opt
         html_content = "<p>Contactate con : <strong>"+name+" "+lastname+"</strong> <br> tel: <strong>"+str(phone)+"<br> correo: <strong>"+email+"</strong><br> Le interesa el  plan:<strong>"+plan_opt+"</strong><br>Grado escolar:<strong>"+grade_opt+"</strong></p>"

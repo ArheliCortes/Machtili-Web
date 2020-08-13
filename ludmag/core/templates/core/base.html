@@ -2,114 +2,175 @@
 <html lang="en">
 {%load static %}
   <head>
-    <title>LUDI MAGISTRI-{%block title %}{%endblock%}</title>
+    <title>Machtili-{%block title %}{%endblock%}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-   
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <link rel="stylesheet" href="{% static 'core/css/animate.css' %}">
-    <link rel="stylesheet" href="{% static 'core/css/owl.carousel.min.css' %}">
-    <link rel="stylesheet" href="{% static 'core/css/owl.theme.default.min.css' %}">
-    <link rel="stylesheet" href="{% static 'core/css/magnific-popup.css' %}">
-    <link rel="stylesheet" href="{% static 'core/css/flaticon.css' %}">
-    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
-     <!-- Style Formulario  -->
-    <link rel="stylesheet" href="{% static 'core/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
-    <link rel="stylesheet" href="{% static 'core/css/style-form.css' %}">
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Descomentar cuando se tenga el icono
+    <link href="assets/img/mi_icono.png" rel="apple-touch-icon">
+    -->
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'core/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'core/assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+    <link href="{% static 'core/assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'core/assets/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+    <link href="{% static 'core/assets/vendor/nivo-slider/css/nivo-slider.css' %}" rel="stylesheet">
+    <link href="{% static 'core/assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'core/assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'core/assets/css/style.css'%}" rel="stylesheet">
+    <!----Template Formulario --->
+    <link rel="stylesheet" href="{% static 'core/assets/css/style-form.css' %}">
 
   </head>
-  <body>
 
-  	<div class="wrap">
-			<div class="container">
-				<div class="row">
-          <div class="col-md-4">
-          </div>
-					<div class="col-md-4 d-flex justify-content-center">
-						<p class="logo mb-0 phone pl-md-2">
-							<a href="#"><span class="fa fa-book mr-1"></span>LUDI MAGISTRI</a>
-						</p>
-					</div>
-					<div class="col-md-4 d-flex justify-content-md-end">
-						<div class="social-media">
-			    		<p class="mb-0 d-flex">
-			    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-whatsapp"><i class="sr-only">Watsapp</i></span></a>
-			    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
-			    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-youtube"><i class="sr-only">Youtube</i></span></a>
-			    		
-			    		</p>
-		        </div>
-					</div>
-				</div><!--end-row-->
-			</div>
-		</div>
-    
-	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container">
-	      <a class="navbar-brand" href="index.html">LUDI MAGISTRI</a>
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="oi oi-menu"></span> Menu
-	      </button>
+  <body data-spy="scroll" data-target="#navbar-example">
 
-	      <div class="collapse navbar-collapse " id="ftco-nav">
-	        <ul class="navbar-nav ml-auto  ">
-	          <li class="nav-item active"><a href="#section-about" class="nav-link">NOSOTROS</a></li>
-	          <li class="nav-item"><a href="#section-plans" class="nav-link">OFERTA ACADÉMICA/PLANES</a></li>
-	          <li class="nav-item"><a href="#" class="nav-link">MATERIAL DE APOYO</a></li>
-	          <li class="nav-item"><a href="#" class="nav-link">PREGUNTAS FRECUENTES</a></li>
-	          <li class="nav-item"><a href="#" class="nav-link">BLOG</a></li>
-	         
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
-    <!-- END nav -->
-    {% block content %}
-    
-    {% endblock  %}
-   
-    <footer>
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex">
 
-      <div class="container-fluid px-0 py-3 bg-black">
-      	<div class="container">
-      		<div class="row">
-	          <div class="col-md-12">
-		
-	            <p class="mb-0" style="color: rgba(255,255,255,.5);">Copyright 2020 Ludi Magistri</p>
-	          </div>
-	        </div>
-      	</div>
+      <div class="logo mr-auto">
+        <h1 class="text-light"><a href="{% url 'home'%}">Machtili</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
-    </footer>
-    
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="#header">Principal</a></li>
+          <li><a href="#about">Nosotros</a></li>
+          <li><a href="#pricing">Oferta académica/Planes</a></li>
+          <li><a href="#">Material de apoyo</a></li>
+          <li><a href="#">Preguntas Frecuentes</a></li>
+          <li><a href="#">Blog</a></li>
+
+        
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+  <{% block content %}
   
+  {% endblock  %}
 
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+      <!-- ======= Suscribe Section ======= -->
+    <div class="suscribe-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs=12">
+            <div class="suscribe-text text-center">
+            
+              <h3>Búscanos en las redes sociales!</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- End Suscribe Section -->
 
+    <!-- ======= Contact Section ======= -->
+    <div id="contact" class="contact-area">
+      <div class="contact-inner area-padding">
+        <div class="contact-overly"></div>
+        <div class="container ">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="section-headline text-center">
+                <h2>Contáctanos</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <!-- Start contact icon column -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="contact-icon text-center">
+                <div class="single-icon">
+                  <i class="fa fa-whatsapp"></i>
+                  <p>
+                    Cel: 55 7979 0890<br>
+                    <span>Lunes-Viernes (9am-9pm)</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+             <!-- Start contact icon column -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="contact-icon text-center">
+                <div class="single-icon">
+                  <i class="fa fa-envelope-o"></i>
+                  <p>
+                    Correo: contacto@machtili.com.mx<br>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Start contact icon column -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="contact-icon text-center">
+                <div class="single-icon">
+                  <i class="fa fa-facebook"></i>
+                  <p>
+                    facebook:
+                    <a href="https://www.facebook.com/machtili"><span>Machili</span></a>
+                  </p>
+                </div>
+              </div>
+            </div>
 
-  <script src="{% static 'core/js/jquery.min.js' %}"></script>
-  <script src="{% static 'core/js/jquery-migrate-3.0.1.min.js' %}"></script>
-  <script src="{% static 'core/js/popper.min.js' %}"></script>
-  <script src="{% static 'core/js/bootstrap.min.js' %}"></script>
-  <script src="{% static 'core/js/jquery.easing.1.3.js' %}"></script>
-  <script src="{% static 'core/js/jquery.waypoints.min.js' %}"></script>
-  <script src="{% static 'core/js/jquery.stellar.min.js' %}"></script>
-  <script src="{% static 'core/js/owl.carousel.min.js' %}"></script>
-  <script src="{% static 'core/js/jquery.magnific-popup.min.js' %}"></script>
-  <script src="{% static 'core/js/jquery.animateNumber.min.js' %}"></script>
-  <script src="{% static 'core/js/scrollax.min.js' %}"></script>
-  <script src="{% static 'core/js/google-map.js' %}"></script>
-  <script src="{% static 'core/js/main.js' %}"></script>
-    <!-- JS  formulario-->
-  <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
-  <script src="{% static 'core/js/main-form.js' %}"></script>
+  </main><!-- End #main -->
 
-   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <!-- ======= Footer ======= -->
+  <footer>
     
-  </body>
+    <div class="footer-area-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="copyright text-center">
+              <p>
+                &copy; Copyright 2020 <strong>Machtili</strong>
+              </p>
+            </div>
+        
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'core/assets/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'core/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'core/assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'core/assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'core/assets/vendor/appear/jquery.appear.js' %}"></script>
+  <script src="{% static 'core/assets/vendor/knob/jquery.knob.js' %}"></script>
+  <script src="{% static 'core/assets/vendor/parallax/parallax.js' %}"></script>
+  <script src="{% static 'core/assets/vendor/wow/wow.min.js' %}"></script>
+  <script src="{% static 'core/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'core/assets/vendor/nivo-slider/js/jquery.nivo.slider.js' %}"></script>
+  <script src="{% static 'core/assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'core/assets/vendor/venobox/venobox.min.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'core/assets/js/main.js' %}"></script>
+
+</body>
+
 </html>
+
+
+

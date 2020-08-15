@@ -16,6 +16,10 @@
         <link rel="stylesheet" type="text/css" href="{% static 'core/assets/css-uc/css/main.css' %}">
     <!--===============================================================================================-->
    {% endblock  %}
+   {%block itemshome%}
+          <li class="active"><a href="{%url 'home'%}">Principal</a></li>
+   
+    {%endblock%}
    
    {% block content %} 
     <div>
@@ -36,12 +40,20 @@
                 <p class="m2-txt1 txt-center p-b-48">
                     Solicita información y siguenos en facebook!
                 </p>
-
-                
+                <p  class="m2-txt1 txt-center p-b-48"  style="color:#fff; size:20px;">
+                    facebook:
+                    <a href="https://www.facebook.com/machtili">Machili</a>
+                </p>
 
             </div>
-        </div>
+       
+        
+
+       </div>
+
     </div>
+
+
     {%endblock%} 
 
 

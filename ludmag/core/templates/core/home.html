@@ -1,6 +1,15 @@
 {% extends "core/base.html" %}
 {% block title %}Principal{% endblock  %}
 {% load static %}
+{%block itemshome%}
+          <li class="active"><a href="#header">Principal</a></li>
+          <li><a href="#about">Nosotros</a></li>
+          <li><a href="#pricing">Oferta académica/Planes</a></li>
+          <li><a href="{%url 'stop'%}">Material de apoyo</a></li>
+          <li><a href="{%url 'stop'%}">Preguntas Frecuentes</a></li>
+          <li><a href="{%url 'stop'%}">Blog</a></li>
+
+{%endblock%}
 {% block content %}
 <!-- ======= Slider Section ======= -->
   <div class="slider-area">
@@ -344,12 +353,80 @@
           <p >¡En Machtili contamos con planes desde <strong>$180.00</strong> pesos semanales!</p>
         </div>
       </div><!--end container-->
-  
-    
+     
 
     </div><!-- End Pricing Section -->
+        <!-- ======= Contact Section ======= -->
+    <div id="contact" class="contact-area">
+      <div class="contact-inner area-padding">
+        <div class="contact-overly"></div>
+        <div class="container ">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="section-headline text-center">
+                <h2>Contáctanos</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <!-- Start contact icon column -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="contact-icon text-center">
+                <div class="single-icon">
+                  <i class="fa fa-whatsapp"></i>
+                  <p>
+                    Cel: 55 7979 0890<br>
+                    <span>Lunes-Viernes (9am-9pm)</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+             <!-- Start contact icon column -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="contact-icon text-center">
+                <div class="single-icon">
+                  <i class="fa fa-envelope-o"></i>
+                  <p>
+                    Correo: contacto@machtili.com.mx<br>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Start contact icon column -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="contact-icon text-center">
+                <div class="single-icon">
+                  <i class="fa fa-facebook"></i>
+                  <p>
+                    facebook:
+                    <a href="https://www.facebook.com/machtili"><span>Machili</span></a>
+                  </p>
+                </div>
+              </div>
+            </div>
 
-    
-
+  </main><!-- End #main -->
 {% endblock%}
+
+
+{% block footer %}
+ <!-- ======= Footer ======= -->
+  <footer>
+    
+    <div class="footer-area-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="copyright text-center">
+              <p>
+                &copy; Copyright 2020 <strong>Machtili</strong>
+              </p>
+            </div>
+        
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
  
+ {% endblock  %}

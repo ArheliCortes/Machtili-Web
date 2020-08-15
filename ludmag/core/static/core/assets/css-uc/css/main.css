@@ -173,7 +173,8 @@ Primary use:
   position: fixed;
   z-index: 0;
   width: 100%;
-  padding: 230px 60px;
+  height: 100%;
+
   top: 0;
   left: 0;
 }
@@ -182,7 +183,8 @@ Primary use:
   display: block;
   position: absolute;
   width: 100%;
-  padding: 230px 60px;
+  height: 100%;
+
   top: 0;
   left: 0;
 }

@@ -26,10 +26,14 @@ def sendEmail(request):
         lastname = form.cleaned_data['lastname']
         phone = form.cleaned_data['phone']
         email = form.cleaned_data['email']
-        grade = form.cleaned_data['grade']
-        grade_opt = dict(form.fields['grade'].choices)[grade]      
-        plan = form.cleaned_data['plan']
-        plan_opt = dict(form.fields['plan'].choices)[plan]
+        grade = int(form.cleaned_data['grade'])
+        plan = int(form.cleaned_data['plan'])
+
+        grade_value = dict(form.fields['grade'].choices)['-- Grado escolar --'][grade-1]
+        grade_opt=grade_value[1]    
+            
+        plan_value =dict(form.fields['plan'].choices)['-- Plan de ínteres --'][plan-1]
+        plan_opt = plan_value[1]
         
         subject =  "Un nuevo cliente solicita información"
         from_email = "Machtili<"+settings.EMAIL_HOST_USER+">"
@@ -57,6 +61,7 @@ def sendEmail(request):
         return render(request, 'core/home.html', {'form': form})
     else :
         form= Formulario()
+    
     
     return render(request, 'core/home.html', {'form': form})
 

@@ -131,7 +131,7 @@ body {
   border-radius: 2px;
   right: 15px;
   bottom: 15px;
-  transition: background 0.5s;
+  transition: 0.5s;
 }
 
 @media (max-width: 768px) {
@@ -1438,7 +1438,7 @@ preview-2
 # Pricing
 --------------------------------------------------------------*/
 .pricing-area {
-  background: rgba(0, 0, 0, 0.03) none repeat scroll 0 0;
+  background: rgba(0, 0, 0, 0.05) none repeat scroll 0 0;
 }
 .pricing-area p{
   font-size: 18px;
@@ -1454,14 +1454,14 @@ preview-2
 .pri_title{
   text-align: center;
   transition: all 0.4s ease 0s;
-  background: rgba(0, 0, 0, 0.03);
+  background: rgba(0, 0, 0, 0.0);
   padding-top: 200px;
   
 }
 .pri_title_col {
   text-align: center;
   transition: all 0.4s ease 0s;
-  background:rgba(0, 0, 0, 0.03);
+  background:rgba(0, 0, 0, 0.0);
   
 }
 .pri_title h3 {

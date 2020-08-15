@@ -5,8 +5,8 @@ from django.utils.html import escape, conditional_escape
 
 # iterable 
 COURSE_CHOICES =( 
-     ('-- Grado escolar--', 
-       (
+     ('-- Grado escolar --', 
+       [
             
             ("1", "kinder"),
             ("2", "Primer año de Primaria"),  
@@ -18,12 +18,12 @@ COURSE_CHOICES =(
             ("8", "Primer año de Secundaria"), 
             ("9", "Segundo año de Secundaria"), 
             ("10", "Tercer año de Secundaria"),
-       )
+       ]
      ),
 ) 
 
 PLAN_CHOICES =( 
-    ('-- Plan de ínteres--', 
+    ('-- Plan de ínteres --', 
       (
         ("1", "Básico"),
         ("2", "Avanzado"),

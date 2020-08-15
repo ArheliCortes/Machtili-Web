@@ -1,0 +1,64 @@
+
+{% extends "core/base.html" %}
+{%load static%}
+
+    {% block style_underconstruction %} 
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'core/assets/css-uc/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'core/assets/css-uc/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'core/assets/css-uc/vendor/animate/animate.css' %}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'core/assets/css-uc/vendor/select2/select2.min.css' %}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'core/assets/css-uc/css/util.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'core/assets/css-uc/css/main.css' %}">
+    <!--===============================================================================================-->
+   {% endblock  %}
+   
+   {% block content %} 
+    <div>
+        <!--  -->
+        <div class="simpleslide100">
+            <div class="simpleslide100-item bg-img1" style="background-image: url('{% static 'core/assets/img/slider/bg2.jpg' %}');"></div>
+            <div class="simpleslide100-item bg-img1" style="background-image: url('{% static 'core/assets/img/slider/bg3.jpg' %}');"></div>
+            <div class="simpleslide100-item bg-img1" style="background-image: url('{% static 'core/assets/img/slider/bg4.jpg' %}');"></div>
+        </div>
+
+        <div class="size1 overlay1">
+            <!--  -->
+            <div class="size1 flex-col-c-m p-l-15 p-r-15 p-t-50 p-b-50">
+                <h3 class="l1-txt1 txt-center p-b-25">
+                    Esta página esta en construcción.
+                </h3>
+
+                <p class="m2-txt1 txt-center p-b-48">
+                    Solicita información y siguenos en facebook!
+                </p>
+
+                
+
+            </div>
+        </div>
+    </div>
+    {%endblock%} 
+
+
+    {% block script_underconstruction %} 
+    <!--===============================================================================================-->	
+        <script src="{% static 'core/assets/css-uc/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+    <!--===============================================================================================-->
+        <script src="{% static 'core/assets/css-uc/vendor/bootstrap/js/popper.js' %}"></script>
+        <script src="{% static 'core/assets/css-uc/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!--===============================================================================================-->
+        <script src="{% static 'core/assets/css-uc/vendor/select2/select2.min.js' %}"></script>
+    <!--===============================================================================================-->
+        <script src="{% static 'core/assets/css-uc/vendor/countdowntime/moment.min.js' %}"></script>
+        <script src="{% static 'core/assets/css-uc/vendor/countdowntime/moment-timezone.min.js' %}"></script>
+        <script src="{% static 'core/assets/css-uc/vendor/countdowntime/moment-timezone-with-data.min.js' %}"></script>
+        <script src="{% static 'core/assets/css-uc/vendor/countdowntime/countdowntime.js' %}"></script>
+
+    <!--===============================================================================================-->
+        <script src="{% static 'core/assets/css-uc/js/main.js' %}"></script>
+    {%endblock%}

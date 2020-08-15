@@ -29,6 +29,7 @@
     <link href="{% static 'core/assets/css/style.css'%}" rel="stylesheet">
     <!----Template Formulario --->
     <link rel="stylesheet" href="{% static 'core/assets/css/style-form.css' %}">
+    {% block style_underconstruction %} {% endblock  %}
 
   </head>
 
@@ -49,22 +50,18 @@
           <li class="active"><a href="#header">Principal</a></li>
           <li><a href="#about">Nosotros</a></li>
           <li><a href="#pricing">Oferta académica/Planes</a></li>
-          <li><a href="#">Material de apoyo</a></li>
-          <li><a href="#">Preguntas Frecuentes</a></li>
-          <li><a href="#">Blog</a></li>
-
-        
-
+          <li><a href="{%url 'stop'%}">Material de apoyo</a></li>
+          <li><a href="{%url 'stop'%}">Preguntas Frecuentes</a></li>
+          <li><a href="{%url 'stop'%}">Blog</a></li>
         </ul>
       </nav><!-- .nav-menu -->
-
     </div>
   </header><!-- End Header -->
-  <{% block content %}
+  {% block content %}
   
   {% endblock  %}
-
       <!-- ======= Suscribe Section ======= -->
+    <!--
     <div class="suscribe-area">
       <div class="container">
         <div class="row">
@@ -76,7 +73,8 @@
           </div>
         </div>
       </div>
-    </div><!-- End Suscribe Section -->
+    </div>--><!-- End Suscribe Section -->
+  
 
     <!-- ======= Contact Section ======= -->
     <div id="contact" class="contact-area">
@@ -167,6 +165,7 @@
 
   <!-- Template Main JS File -->
   <script src="{% static 'core/assets/js/main.js' %}"></script>
+  {% block script_underconstruction %} {% endblock  %}
 
 </body>
 

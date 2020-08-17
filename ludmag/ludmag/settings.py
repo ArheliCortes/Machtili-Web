@@ -27,7 +27,18 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '8kd$gf$=v#&vvbi_g)(keea*&v=x6y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =  False
 
-ALLOWED_HOSTS = ['http://machtili.com.mx/','localhost','127.0.0.1']
+SECURE_SSL_REDIRECT = True
+SECURE_HSTS_SECONDS = 3600 
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SESSION_COOKIE_SECURE = True
+SECURE_REFERRER_POLICY = "strict-origin"
+SECURE_HSTS_PRELOAD = True
+CSRF_COOKIE_SECURE = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+PREPEND_WWW = True
+BASE_URL = "http://machtili.com.mx"
+
+ALLOWED_HOSTS = ['www.machtili.com.mx', 'machtili.com.mx','localhost','127.0.0.1']
 
 
 # Application definition

@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '8kd$gf$=v#&vvbi_g)(keea*&v=x6y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =  False
 
-ALLOWED_HOSTS = ['machtili.com.mx','localhost']
+ALLOWED_HOSTS = ['http://machtili.com.mx/','localhost']
 
 
 # Application definition

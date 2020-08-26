@@ -2,20 +2,21 @@
 {% block title %}Principal{% endblock  %}
 {% load static %}
 {%block itemshome%}
-          <li class="active"><a href="#header">Principal</a></li>
-          <li><a href="#about">Nosotros</a></li>
-          <li><a href="#pricing">Oferta académica/Planes</a></li>
-          <li><a href="{%url 'stop'%}">Material de apoyo</a></li>
-          <li><a href="{%url 'stop'%}">Preguntas Frecuentes</a></li>
-          <li><a href="{%url 'stop'%}">Blog</a></li>
+      <li class="active"><a href="#header">Principal</a></li>
+      <li><a href="#about">Nosotros</a></li>
+      <li><a href="#pricing">Oferta académica/Planes</a></li>
+      <li><a href="{%url 'stop'%}">Material de apoyo</a></li>
+      <li><a href="{%url 'stop'%}">Preguntas Frecuentes</a></li>
+      <li><a href="{%url 'stop'%}">Blog</a></li>
 
 {%endblock%}
 {% block content %}
-<!-- ======= Slider Section ======= -->
-  <div class="slider-area">
-    <div class="bend niceties preview-2">
+    
+  <!-- ======= Slider Section ======= -->
+  <div id="home" class="container-home">
+    <div class="bend niceties preview-2 slider-area">
       <div id="ensign-nivoslider" class="slides">
-        <img src="{% static 'core/assets/img/slider/bg2.jpg' %}" alt="" title="#slider-direction-1" />
+       <img src="{% static 'core/assets/img/slider/bg2.jpg' %}" alt="" title="#slider-direction-1" />
         <img src="{% static 'core/assets/img/slider/bg3.jpg' %}" alt="" title="#slider-direction-2" />
         <img src="{% static 'core/assets/img/slider/bg4.jpg' %}" alt="" title="#slider-direction-3" />
       </div>
@@ -25,41 +26,34 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6 col-sm-12 col-xs-12 d-flex justify-content-start">
-           
-              <div class="slider-content text-left"> 
-                  {% if messages %}
-                    <div {% if message.tags %}  class="messages alert alert-{{message.tags}} alert-dismissible fade show" {%else%} class="messages alert alert-info alert-dismissible fade show"{% endif %} role="alert">
-                      {% for message in messages %}
-                        <strong>{{ message }}</strong>          
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      {%endfor%}
-                    </div>  
-
-                  {% endif %} 
-                    
-                    <!-- layer 1 -->
-                  <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
-                    <h2 class="title1"><span style="color:#4473c5;">Clases</span> <span class="opct">en línea<span></h2>
-                  </div>
-                  <!-- layer 2 -->
-                  <div class="layer-1-2  wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                    <h1 class="title-2-black " >Tú hijo merece una educación de calidad sin importar dónde esté</h1>
-                  </div>
-                  <!-- layer 3 -->
-                  <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                    <a class="ready-btn right-btn page-scroll" href="#pricing">VER PLAN</a>
-                    
-                  </div>                    
-            
+              <div class="slider-content text-left">         
+                {% if messages %} 
+                  {% for message in messages %}
+                    <script type="text/javascript" language="JavaScript">
+                       alert("{{message}}")   
+                      
+                    </script>
+                  {%endfor%}
+                {% endif %} 
+                 <!-- layer 1 -->
+                <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
+                  <h2 class="title1"><span style="color:#4473c5;">Clases</span> <span class="opct">en línea</span></h2>
+                </div>
+                <!-- layer 2 -->
+                <div class="layer-1-2  wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                  <h1 class="title-2-black " >Tú hijo merece una educación de calidad sin importar dónde esté</h1>
+                </div>
+                <!-- layer 3 -->
+                <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
+                  <a class="ready-btn right-btn page-scroll" href="#pricing">VER PLAN</a>
+                </div>                        
               </div><!--end slider-content-->    
             </div>
             <div class="col-md-6 col-sm-12 col-xs-12 ftco-animate d-flex justify-content-end">
               <div class="slider-content-form "> 
-                <div class="main">
-                        <div class="container-form ">
-                              <form method="POST" action="{%url 'home'%}" class="appointment-form" id="appointment-form" enctype = "multipart/form-data">
+                <div class="main" id="mainForm">
+                        <div class="container-form main-container-form">
+                           <form method="POST" action="{%url 'home'%}" class="appointment-form" id="appointment-form" enctype = "multipart/form-data">
 
                                 <h2>¡Recibe información de planes y programas!</h2>
                                 <p class="text-center">Al recibir su información, uno de nuestros asesores se comunicará con usted.</p><br>
@@ -69,12 +63,12 @@
                                     {{form}}
                                 </div>
                                 
-                                <div class="form-submit d-flex justify-content-center"">
+                                <div class="form-submit d-flex justify-content-center">
                                     <input type="submit" name="submit" id="submit" class="submit" value="¡Quiero recibir información!" />
                                 </div>
                               </form>
                         </div>
-                </div> <!--fin main-->
+                      </div> <!--fin main-->
 
               </div> 
             </div>    
@@ -88,39 +82,28 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6 col-sm-12 col-xs-12">
-              <div class="slider-content text-left">   
-                  {% if messages %}
-                    <div {% if message.tags %}  class="messages alert alert-{{message.tags}} alert-dismissible fade show" {%else%} class="messages alert alert-info alert-dismissible fade show"{% endif %} role="alert">
-                      {% for message in messages %}
-                        <strong>{{ message }}</strong>          
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      {%endfor%}
-                    </div>  
-
-                  {% endif %}     
-                  <!-- layer 1 -->
-                  <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
-                    <h2 class="title1 "><span class="opct">Primaria<span></h2>
-                  </div>
-                  <!-- layer 2 -->
-                  <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                    <h1 class="title2 title-2-black-2">Contamos con maestros especializados en las áreas de español,matematicas e inglés</h1>
-                  </div>
-                  <!-- layer 3 -->
-                  <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                    <a class="ready-btn right-btn page-scroll" href="#pricing">VER PLAN</a>           
-                  </div>        
+              <div class="slider-content text-left">       
+                        <!-- layer 1 -->
+                        <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
+                          <h2 class="title1 "><span class="opct">Primaria</span></h2>
+                        </div>
+                        <!-- layer 2 -->
+                        <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                          <h1 class="title2 title-2-black-2">Contamos con maestros especializados en las áreas de español, matematicas e inglés</h1>
+                        </div>
+                        <!-- layer 3 -->
+                        <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
+                          <a class="ready-btn right-btn page-scroll" href="#pricing">VER PLAN</a>           
+                        </div>        
                        
               </div>
             </div><!--end md-6 1-->
             <div class="col-md-6 col-sm-12 col-xs-12 ftco-animate d-flex justify-content-end">
               <div class="slider-content-form "> 
-                <div class="main">
-                        <div class="container-form ">
-                          <form method="POST" action="{%url 'home'%}" enctype = "multipart/form-data" class="appointment-form" id="appointment-form">
-                               
+                <div class="main" id="mainForm">
+                        <div class="container-form main-container-form" >
+                            <form method="POST" action="{%url 'home'%}" class="appointment-form" id="appointment-form" enctype = "multipart/form-data">
+
                                 <h2>¡Recibe información de planes y programas!</h2>
                                 <p class="text-center">Al recibir su información, uno de nuestros asesores se comunicará con usted.</p><br>
                                 {% csrf_token %} 
@@ -129,10 +112,10 @@
                                     {{form}}
                                 </div>
                                 
-                                <div class="form-submit d-flex justify-content-center"">
+                                <div class="form-submit d-flex justify-content-center">
                                     <input type="submit" name="submit" id="submit" class="submit" value="¡Quiero recibir información!" />
                                 </div>
-                          </form>
+                              </form>
                         </div>
                       </div> <!--fin main-->
               </div> 
@@ -147,39 +130,29 @@
           <div class="row">
             <div class="col-md-6 col-sm-12 col-xs-12">
               <div class="slider-content text-left">
-                 {% if messages %}
-                    <div {% if message.tags %}  class="messages alert alert-{{message.tags}} alert-dismissible fade show" {%else%} class="messages alert alert-info alert-dismissible fade show"{% endif %} role="alert">
-                      {% for message in messages %}
-                        <strong>{{ message }}</strong>          
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      {%endfor%}
-                    </div>  
-
-                  {% endif %} 
-        
-                  <!-- layer 1 -->
-                  <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
-                    <h2 class="title1"><span class="opct">Secundaria</span></h2>
-                  </div>
-                  <!-- layer 2 -->
-                  <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                    <h1 class="title2 title-2-black-2">Nuestra oferta incluye las materias de matemáticas, física, química, español e inglés</h1>
-                  </div>
-                  <!-- layer 3 -->
-                  <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                    <a class="ready-btn right-btn page-scroll" href="#pricing">VER PLAN</a>
-                  </div>        
+             
+                        <!-- layer 1 -->
+                        <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
+                          <h2 class="title1"><span class="opct">Secundaria</span></h2>
+                        </div>
+                        <!-- layer 2 -->
+                        <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                          <h1 class="title2 title-2-black-2">Nuestra oferta incluye las materias de matemáticas, física, química, español e inglés</h1>
+                        </div>
+                        <!-- layer 3 -->
+                        <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
+                          <a class="ready-btn right-btn page-scroll" href="#pricing">VER PLAN</a>
+                          
+                        </div>        
       
               </div><!-- end slider--> 
             </div><!--end md-6 1-->  
             <div class="col-md-6 col-sm-12 col-xs-12 ftco-animate d-flex justify-content-end">
               <div class="slider-content-form "> 
-                <div class="main">
-                        <div class="container-form ">
-                          <form method="POST" action="{%url 'home'%}" enctype = "multipart/form-data" class="appointment-form" id="appointment-form">
-                               
+                <div class="main" id="mainForm">
+                        <div class="container-form main-container-form">
+                            <form method="POST" action="{%url 'home'%}" class="appointment-form" id="appointment-form" enctype = "multipart/form-data">
+
                                 <h2>¡Recibe información de planes y programas!</h2>
                                 <p class="text-center">Al recibir su información, uno de nuestros asesores se comunicará con usted.</p><br>
                                 {% csrf_token %} 
@@ -188,25 +161,41 @@
                                     {{form}}
                                 </div>
                                 
-                                <div class="form-submit d-flex justify-content-center"">
+                                <div class="form-submit d-flex justify-content-center">
                                     <input type="submit" name="submit" id="submit" class="submit" value="¡Quiero recibir información!" />
                                 </div>
-                          </form>
+                              </form>
                         </div>
                       </div> <!--fin main-->
               </div> 
-            </div>  <!--end md-6 2-->  
-
-
-
-
+            </div>  <!--end md-6 2--> 
           </div>
         </div>
       </div>
     </div>
   </div><!-- End Slider -->
+    <section class="movilForm" id="blockForm">
+        <div class="main">
+          <div class="container-form ">
+              <form method="POST" action="{%url 'home'%}" class="appointment-form" id="appointment-form" enctype = "multipart/form-data">
+                <h2>¡Recibe información de planes y programas!</h2>
+                <p class="text-center">Al recibir su información, uno de nuestros asesores se comunicará con usted.</p><br>
+                {% csrf_token %} 
+                <div class="form-group-1 "> 
+                      
+                    {{form}}
+                </div>
+                
+                <div class="form-submit d-flex justify-content-center">
+                    <input type="submit" name="submit" id="submit" class="submit" value="¡Quiero recibir información!"/>
+                </div>
+              </form>
+          </div>
+        </div> <!--fin main-->
+     </section>
 
-  <main id="main">
+
+  <div id="main">
 
     <!-- ======= About Section ======= -->
     <div id="about" class="about-area area-padding">
@@ -240,12 +229,11 @@
         </div>
       </div>
     </div><!-- End About Section -->
-
-    <!-- ======= Pricing Section ======= -->
+        <!-- ======= Pricing Section ======= -->
     <div id="pricing" class="pricing-area area-padding">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="col-md-12">
             <div class="section-headline text-center">
               <h2>Oferta educativa/Planes</h2>
               <p>En Machtili manejamos un servicio de <b>primer nivel</b> que ponemos a tu
@@ -253,29 +241,36 @@
             </div>
           </div>
         </div>
+  
         <div class="row py-3">
-          <div class="col-md-2 col-sm-2 col-xs-12">
+          <div id="planTitle" class="col-md-2 ">
             <div>
               
-              <div class="pri_title">
+              <div class="pri_title margin-pri-title">
                  <h3>básico  </h3>
               </div><br>
-              <div class="pri_title">
+              <div class="pri_title margin-pri-title">
                  <h3>avanzado  </h3>
               </div>
               <br>
-              <div class="pri_title">
+              <div class="pri_title margin-pri-title">
                 <h3>premium </h3>
               </div>
 
             </div>
        
           </div>
-          <div class="col-md-5 col-sm-4 col-xs-12">
-            <div class="pri_title_col">
-              <h3>Kinder/Primaria <br /> </h3> 
+  
+          <div class="col-md-5 col-sm-12 col-xs-12">
+            <div class="movil-pri_title_col movil-pri_title_text " id="movil-title-grade-1">
+              <h3>Kinder/Primaria</h3> 
+            </div>
+            <div class="pri_title_col" id="desk-title-grade-1" >
+              <h3>Kinder/Primaria </h3> 
             </div><br>
-
+            <div class="pri_title_col pink-block" id="movil-title1">
+              <h3>Básico</h3> 
+            </div>
              <div class="pri_table_list pink-block">
               <ol>
                 <li class="check">8 clases de una hora</li>
@@ -287,6 +282,9 @@
               </ol>   
             </div>
             <br>
+            <div class="pri_title_col orange-block" id="movil-title2">
+              <h3>Avanzado</h3> 
+            </div>
             <div class="pri_table_list active orange-block">   
               <ol>
                 <li class="check">16 clases de una hora</li>
@@ -299,6 +297,9 @@
             
             </div>
             <br>
+            <div class="pri_title_col green-block" id="movil-title3">
+              <h3>Premium </h3> 
+            </div>
             <div class="pri_table_list active green-block ">   
               <ol>
                 <li class="check">24 clases de una hora</li>
@@ -308,15 +309,21 @@
                 <li class="check">Acceso ilimitado de material adicional <br>presente en la página</li>
                
               </ol>
-              <button onclick="window.location.href='#appointment-form'">SOLICITA INFORMACIÓN</a>
+                <button onclick="redirectForm()">SOLICITA INFORMACIÓN</button>
             </div>
           </div>
-
-          <div class="col-md-5 col-sm-4 col-xs-12">
-            <div class="pri_title_col ">
+     
+          <div class="col-md-5 col-sm-12 col-xs-12">
+            <div class="movil-pri_title_col movil-pri_title_text" id="movil-title-grade-2">
+              <h3>Secundaria</h3> 
+            </div>
+            <div class="pri_title_col" id="desk-title-grade-2">
               <h3>Secundaria <br/> </h3>
             </div>
             <br>
+            <div class="pri_title_col yellow-block" id="movil-title4">
+              <h3>Básico</h3> 
+            </div>
             <div class="pri_table_list yellow-block ">
                 <ol>
                   <li class="check">8 clases de una hora</li>
@@ -327,6 +334,9 @@
                </ol>
           
             </div><br>
+             <div class="pri_title_col blue-block" id="movil-title5">
+              <h3>Avanzado</h3> 
+            </div>
             <div class="pri_table_list blue-block">
                 <ol>
                   <li class="check">12 clases de una hora</li>
@@ -336,6 +346,9 @@
                   <li class="check cross">Acceso ilimitado de material adicional <br>presente en la página</li>   
                </ol>
             </div><br>
+            <div class="pri_title_col purple-block" id="movil-title6">
+              <h3>Premium</h3> 
+            </div>
             <div class="pri_table_list purple-block ">
               <ol>
                   <li class="check">20 clases de una hora</li>
@@ -344,7 +357,7 @@
                   <li class="check">Asesoría para la resolución de tareas</li>
                   <li class="check">Acceso ilimitado de material adicional <br>presente en la página</li>   
                </ol>
-              <button onclick="window.location.href='#appointment-form'">SOLICITA INFORMACIÓN</a>
+              <button onclick="redirectForm()">SOLICITA INFORMACIÓN</button>
             </div>
           </div>
         </div>
@@ -353,64 +366,66 @@
           <p >¡En Machtili contamos con planes desde <strong>$180.00</strong> pesos semanales!</p>
         </div>
       </div><!--end container-->
-     
+  
+    
 
-    </div><!-- End Pricing Section -->
+    </div><!-- End Pricing Section -->    
+   
         <!-- ======= Contact Section ======= -->
     <div id="contact" class="contact-area">
       <div class="contact-inner area-padding">
-        <div class="contact-overly"></div>
-        <div class="container ">
-          <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="section-headline text-center">
-                <h2>Contáctanos</h2>
+            <div class="contact-overly"></div>
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="section-headline text-center">
+                    <h2>Contáctanos</h2>
+                  </div>
+                </div>
               </div>
-            </div>
+              <div class="row">
+                <!-- Start contact icon column -->
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="contact-icon text-center">
+                    <div class="single-icon">
+                      <i class="fa fa-whatsapp"></i>
+                      <p>
+                        Cel: 55 7979 0890<br>
+                        <span>Lunes-Viernes (9am-9pm)</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                 <!-- Start contact icon column -->
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="contact-icon text-center">
+                    <div class="single-icon">
+                      <i class="fa fa-envelope-o"></i>
+                      <p>
+                        Correo: contacto@machtili.com.mx<br>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <!-- Start contact icon column -->
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="contact-icon text-center">
+                    <div class="single-icon">
+                      <i class="fa fa-facebook"></i>
+                      <p>
+                        facebook:
+                        <a href="https://www.facebook.com/machtili"><span>Machtili</span></a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+             </div>
           </div>
-          <div class="row">
-            <!-- Start contact icon column -->
-            <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="contact-icon text-center">
-                <div class="single-icon">
-                  <i class="fa fa-whatsapp"></i>
-                  <p>
-                    Cel: 55 7979 0890<br>
-                    <span>Lunes-Viernes (9am-9pm)</span>
-                  </p>
-                </div>
-              </div>
-            </div>
-             <!-- Start contact icon column -->
-            <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="contact-icon text-center">
-                <div class="single-icon">
-                  <i class="fa fa-envelope-o"></i>
-                  <p>
-                    Correo: contacto@machtili.com.mx<br>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <!-- Start contact icon column -->
-            <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="contact-icon text-center">
-                <div class="single-icon">
-                  <i class="fa fa-facebook"></i>
-                  <p>
-                    facebook:
-                    <a href="https://www.facebook.com/machtili"><span>Machili</span></a>
-                  </p>
-                </div>
-              </div>
-            </div>
+       </div>
+    </div>
 
-  </main><!-- End #main -->
-{% endblock%}
-
-
-{% block footer %}
- <!-- ======= Footer ======= -->
+  </div><!-- End #main -->
+       <!-- ======= Footer ======= -->
   <footer>
     
     <div class="footer-area-bottom">
@@ -428,5 +443,85 @@
       </div>
     </div>
   </footer><!-- End  Footer -->
- 
- {% endblock  %}
+  
+
+{% endblock%}
+
+
+
+ {% block script%}
+    <script>
+        
+        function alert(message) {
+              alert(message)
+            }
+        function redirectForm(){
+            
+            if(window.matchMedia("(max-width: 768px)").matches){
+                window.location.href = '#blockForm' 
+            }else{
+                window.location.href = '#appointment-form'  
+            }
+            
+            
+        }
+    
+        function addForm(x) {
+          var movilForm = document.getElementById("blockForm");
+          if (x.matches) {   
+             movilForm.style.display="block"
+    
+          }else {        
+            movilForm.style.display="none"
+          }
+        }
+        function hidePriceTitle(y) {
+          var planTitle = document.getElementById("planTitle");
+          var dtg = document.getElementById("desk-title-grade-1");
+          var dtg2 = document.getElementById("desk-title-grade-2");
+          var mv1 = document.getElementById("movil-title1");
+          var mv2 = document.getElementById("movil-title2");
+          var mv3 = document.getElementById("movil-title3");
+          var mv4 = document.getElementById("movil-title4");
+          var mv5 = document.getElementById("movil-title5");
+          var mv6 = document.getElementById("movil-title6");
+          var mvg = document.getElementById("movil-title-grade-1");
+          var mvg2 = document.getElementById("movil-title-grade-2");
+          if (y.matches) {   
+             planTitle.style.display="none"
+             dtg.style.display="none"
+             dtg2.style.display="none"
+             mv1.style.display="block"
+             mv2.style.display="block"
+             mv3.style.display="block"
+             mv4.style.display="block"
+             mv5.style.display="block"
+             mv6.style.display="block"
+             mvg.style.display="block"
+             mvg2.style.display="block"
+             
+          }else {        
+            planTitle.style.display="block"
+            dtg.style.display="block"
+            dtg2.style.display="block"
+            mv1.style.display="none"
+            mv2.style.display="none"
+            mv3.style.display="none"
+            mv4.style.display="none"
+            mv5.style.display="none"
+            mv6.style.display="none"
+            mvg.style.display="none"
+            mvg2.style.display="none"
+            
+          }
+        }
+        var x = window.matchMedia("(max-width: 991px)")
+        addForm(x) 
+        x.addListener(addForm) 
+        
+        var price_screen = window.matchMedia("(max-width: 768px)")
+        hidePriceTitle(price_screen)
+        price_screen.addListener(hidePriceTitle)
+
+    </script>
+  {% endblock  %}

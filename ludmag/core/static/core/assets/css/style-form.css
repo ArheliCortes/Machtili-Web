@@ -9,33 +9,8 @@ list-type-ulli, ul {
   margin: 0;
   padding: 0; }
 
-/* roboto-slab-300 - latin */
-@font-face {
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: 300;
-  src: url("../fonts/roboto-slab/roboto-slab-v7-latin-300.eot");
-  /* IE9 Compat Modes */
-  src: local("Roboto Slab Light"), local("RobotoSlab-Light"), url("../fonts/roboto-slab/roboto-slab-v7-latin-300.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-slab/roboto-slab-v7-latin-300.woff2") format("woff2"), url("../fonts/roboto-slab/roboto-slab-v7-latin-300.woff") format("woff"), url("../fonts/roboto-slab/roboto-slab-v7-latin-300.ttf") format("truetype"), url("../fonts/roboto-slab/roboto-slab-v7-latin-300.svg#RobotoSlab") format("svg");
-  /* Legacy iOS */ }
-/* roboto-slab-regular - latin */
- @font-face {
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: 400;
-  src: url("../fonts/roboto-slab/roboto-slab-v7-latin-regular.eot");
-  /* IE9 Compat Modes */
-  src: local("Roboto Slab Regular"), local("RobotoSlab-Regular"), url("../fonts/roboto-slab/roboto-slab-v7-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-slab/roboto-slab-v7-latin-regular.woff2") format("woff2"), url("../fonts/roboto-slab/roboto-slab-v7-latin-regular.woff") format("woff"), url("../fonts/roboto-slab/roboto-slab-v7-latin-regular.ttf") format("truetype"), url("../fonts/roboto-slab/roboto-slab-v7-latin-regular.svg#RobotoSlab") format("svg");
-  /* Legacy iOS */ }
-/* roboto-slab-700 - latin */
- @font-face {
-  font-family: 'Roboto Slab';
-  font-style: normal;
-  font-weight: 700;
-  src: url("../fonts/roboto-slab/roboto-slab-v7-latin-700.eot");
-  /* IE9 Compat Modes */
-  src: local("Roboto Slab Bold"), local("RobotoSlab-Bold"), url("../fonts/roboto-slab/roboto-slab-v7-latin-700.eot?#iefix") format("embedded-opentype"), url("../fonts/roboto-slab/roboto-slab-v7-latin-700.woff2") format("woff2"), url("../fonts/roboto-slab/roboto-slab-v7-latin-700.woff") format("woff"), url("../fonts/roboto-slab/roboto-slab-v7-latin-700.ttf") format("truetype"), url("../fonts/roboto-slab/roboto-slab-v7-latin-700.svg#RobotoSlab") format("svg");
-  /* Legacy iOS */ }
+
+
 .main a:focus, a:active {
   text-decoration: none;
   outline: none;
@@ -69,23 +44,6 @@ list-type-ulli, ul {
   -o-box-shadow: none !important;
   -ms-box-shadow: none !important; }
 
-.main input[type=checkbox] {
-  appearance: checkbox !important;
-  -moz-appearance: checkbox !important;
-  -webkit-appearance: checkbox !important;
-  -o-appearance: checkbox !important;
-  -ms-appearance: checkbox !important; }
-
-.main input[type=radio] {
-  appearance: radio !important;
-  -moz-appearance: radio !important;
-  -webkit-appearance: radio !important;
-  -o-appearance: radio !important;
-  -ms-appearance: radio !important; }
-
-.main img {
-  max-width: 100%;
-  height: auto; }
 
 .main figure {
   margin: 0; }
@@ -134,8 +92,7 @@ list-type-ulli, ul {
 
 .container-form {
   width: 356px;
-  background: #f2f2f2;
-  float: right;
+  background: #fff;
   border: 2px solid #586f98;
   writing-mode: horizontal-tb;
   border-radius: 50px;
@@ -143,8 +100,11 @@ list-type-ulli, ul {
   -webkit-border-radius: 50px;
   -o-border-radius: 50px;
   -ms-border-radius: 50px; 
-}
+  display: block;
 
+
+
+}
 
 
 .appointment-form {
@@ -166,9 +126,9 @@ input, select {
   text-align: center; 
 
 }
-  input:focus, select:focus {
-    color: #222;
-    border-bottom: 2px solid #657995; }
+input:focus, select:focus {
+  color: #222;
+  border-bottom: 2px solid #657995; }
 select {
 
     background-color: rgb(255, 255, 253);
@@ -235,27 +195,72 @@ select {
 
 @media screen and (max-width: 1024px) {
   .container-form {
-    margin: 0 auto; } }
-@media screen and (max-width: 768px) {
+    margin: 0 auto; } 
+}
+
+@media screen and (max-width: 480px) {
+  .appointment-form {
+    padding: 30px 30px 30px 30px; } 
+
+}
+
+/*--------------------------------------------------------------
+# Responsive
+--------------------------------------------------------------*/
+
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1169px) {
+
+  .main h2{
+    font-size: 18px;
+  }
+   input, select {
+    
+    padding: 3px 3px;
+    margin-bottom: 8px;
+
+  }
+  .submit {
+    width: 100%;
+    font-size: 15px;
+  }
+}
+
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
   .container-form {
-    width: calc( 100% - 60px);
-    max-width: 80%; } 
+    width: 60%;
+  
+  } 
+  .main .main-container-form{
+      margin-top: 600px;
+  }
+  .main h2{
+    font-size: 20px;
+  }
+  .main p{
+    font-size: 15px;
+  }
+
+}
+
+/* small mobile :320px. */
+@media (max-width: 767px) {
+  input, select {
+      margin-bottom: 10px;
+  }
+  .submit {
+    width: 100%;
+    font-size: 13px;
+  }
+  .container-form {
+    width: 80%;
+  } 
+  .main .main-container-form{
+      margin-top: 600px;
+  }
   .main h2{
     font-size: 18px;
   }
 }
-@media screen and (max-width: 480px) {
-  .appointment-form {
-    padding: 50px 30px 10px 60px; } }
 
-@media (max-width: 767px) {
-  .container-form {
-    margin-bottom: 30px;
-  }
-  input, select {
-    
-      margin-bottom: 10px;
-  }
-}
-
-/*# sourceMappingURL=style.css.map */

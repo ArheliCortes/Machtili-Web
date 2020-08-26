@@ -29,11 +29,10 @@
     <link href="{% static 'core/assets/css/style.css'%}" rel="stylesheet">
     <!----Template Formulario --->
     <link rel="stylesheet" href="{% static 'core/assets/css/style-form.css' %}">
-    {% block style_underconstruction %} {% endblock  %}
 
   </head>
 
-  <body data-spy="scroll" data-target="#navbar-example">
+  <body data-spy="scroll" data-target="#navbar-example" {% block style-uc %}{% endblock %}>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
@@ -53,14 +52,12 @@
       </nav><!-- .nav-menu -->
     </div>
   </header><!-- End Header -->
+  {%block content-uc%}
+  {% endblock %}
   {% block content %}
-  
   {% endblock  %}
 
-  {% block footer %}
-  
-  {% endblock  %}
-  
+
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <div id="preloader"></div>
@@ -82,6 +79,7 @@
   <!-- Template Main JS File -->
   <script src="{% static 'core/assets/js/main.js' %}"></script>
   {% block script_underconstruction %} {% endblock  %}
+  {% block script%} {% endblock  %}
 
 </body>
 

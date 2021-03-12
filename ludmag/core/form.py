@@ -28,6 +28,7 @@ PLAN_CHOICES =(
         ("1", "Básico"),
         ("2", "Avanzado"),
         ("3", "Premium"), 
+        ("4", "CONDUSEF"), 
       )
     ),
 )

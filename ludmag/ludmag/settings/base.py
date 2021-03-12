@@ -12,7 +12,10 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from django.contrib import messages
+import environ
 
+env = environ.Env()
+environ.Env.read_env()
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -22,23 +25,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '8kd$gf$=v#&vvbi_g)(keea*&v=x6ymsttf57^2w-^1x7*rymg')
+SECRET_KEY = env.str('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =  False
-
-SECURE_SSL_REDIRECT = True
-SECURE_HSTS_SECONDS = 3600 
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-SESSION_COOKIE_SECURE = True
-SECURE_REFERRER_POLICY = "strict-origin"
-SECURE_HSTS_PRELOAD = True
-CSRF_COOKIE_SECURE = True
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-PREPEND_WWW = True
-BASE_URL = "http://machtili.com.mx"
-
-ALLOWED_HOSTS = ['www.machtili.com.mx', 'machtili.com.mx','localhost','127.0.0.1']
 
 
 # Application definition
@@ -53,15 +42,17 @@ INSTALLED_APPS = [
     'core',
 ]
 
+
 MIDDLEWARE = [
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'ludmag.urls'
 
@@ -139,6 +130,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_USE_TLS = True
 EMAIL_HOST = "smtp.gmail.com"
-EMAIL_HOST_USER="humad.ludimagistri@gmail.com"
-EMAIL_HOST_PASSWORD ="Lucy&Adry2020"
+EMAIL_HOST_USER=env.str('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD=env.str('EMAIL_HOST_PASSWORD')
 EMAIL_PORT =587

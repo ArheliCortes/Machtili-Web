@@ -92,7 +92,7 @@ list-type-ulli, ul {
 
 .container-form {
   width: 356px;
-  background: #f2f2f2;
+  background: #fff;
   border: 2px solid #586f98;
   writing-mode: horizontal-tb;
   border-radius: 50px;
@@ -164,7 +164,7 @@ select {
   -o-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
   -ms-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7); }
   .submit:hover {
-    background: #39ace7; }
+    background: #8e5909; }
 
 
 #confirm_type {

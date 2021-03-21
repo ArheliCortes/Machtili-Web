@@ -13,7 +13,7 @@
 {% block content %}
     
   <!-- ======= Slider Section ======= -->
-  <div id="home" class="container-home">
+ <div id="home" class="container-home">
     <div class="bend niceties preview-2 slider-area">
       <div id="ensign-nivoslider" class="slides">
         <img src="{% static 'core/assets/img/slider/bg5.jpeg' %}" alt="" title="#slider-direction-1" />
@@ -21,7 +21,14 @@
         <img src="{% static 'core/assets/img/slider/bg3.jpg' %}" alt="" title="#slider-direction-3" />
         <img src="{% static 'core/assets/img/slider/bg4.jpg' %}" alt="" title="#slider-direction-4" />
       </div>
-
+      {% if messages %} 
+        {% for message in messages %}
+          <script type="text/javascript" language="JavaScript">
+            alert("{{message}}")   
+          </script>
+        {%endfor%}
+      {% endif %} 
+           
       <!-- direction NEW -->
       <div id="slider-direction-1" class="slider-direction slider-one">
         <div class="container">
@@ -29,230 +36,248 @@
             <div class="col-md-6 col-sm-12 col-xs-12">
               <div class="slider-content text-left">
              
-                        <!-- layer 1 -->
-                        <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
-                          <h2 class="title1"><span class="opct">Curso COMIPEMS</span></h2>
-                        </div>
-                        <!-- layer 2 -->
-                        <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                          <h1 class="title2 title-2-black-2">Prepárate para el examen del comipems con nuestros maestros en línea.</h1>
-                        </div>
-                        <!-- layer 3 -->
-                        <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                          <h1 class="title2 title-2-black-2" > ¡ Iniciamos el <span style="font-family:Arial;">20</span> de marzo !</h1>
-      
-                        </div>        
+                  <!-- layer 1 -->
+                  <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
+                    <h2 class="title1"><span class="opct">Curso COMIPEMS</span></h2>
+                  </div>
+                  <!-- layer 2 -->
+                  <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                    <h1 class="title2 title-2-black-2">Prepárate para el examen del comipems con nuestros maestros en línea.</h1>
+                  </div>
+                  <!-- layer 3 -->
+                  <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
+                    <h1 class="title2 title-2-black-2" style="color: #183A77;" > ¡ Iniciamos el <span style="font-family:Arial;">20</span> de marzo !</h1>
+                  </div>  
+                  <!-- layer 4 -->
+                  <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
+                    <a class="ready-btn right-btn page-scroll" href="#comipems">VER MÁS</a>
+                 </div>        
       
               </div><!-- end slider--> 
             </div><!--end md-6 1-->  
+
             <div class="col-md-6 col-sm-12 col-xs-12 ftco-animate d-flex justify-content-end">
               <div class="slider-content-form "> 
                 <div class="main" id="mainForm">
                         <div class="container-form main-container-form">
-                            <form method="POST" action="{%url 'home'%}" class="appointment-form" id="appointment-form" enctype = "multipart/form-data">
-
+                           <form method="POST" action="{%url 'home'%}" class="appointment-form" id="appointment-form" enctype = "multipart/form-data">
+            
                                 <h2>¡Recibe información de planes y programas!</h2>
                                 <p class="text-center">Al recibir su información, uno de nuestros asesores se comunicará con usted.</p><br>
                                 {% csrf_token %} 
                                 <div class="form-group-1 "> 
-                                      
-                                    {{form}}
+                                    {{form.media.js}}
+                                    {{form.as_p}}
+                                    {% for id, country in form.country.choices %}
+                                        <option value="{{ id }}">{{country}}</option>
+                                    {% endfor %}
+
                                 </div>
                                 
                                 <div class="form-submit d-flex justify-content-center">
-                                    <input type="submit" name="submit" id="submit" class="submit" value="¡Quiero recibir información!" />
+                                    <input type="submit" name="submit" id="submit" class="submit" value="¡Recibir información!" />
                                 </div>
                               </form>
                         </div>
                       </div> <!--fin main-->
+            
               </div> 
-            </div>  <!--end md-6 2--> 
+            </div> 
+   
+   
           </div>
         </div>
       </div>
- 
-     <!-- direction 2 -->
-          <div id="slider-direction-2" class="slider-direction slider-two">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-6 col-sm-12 col-xs-12 d-flex justify-content-start">
-                  <div class="slider-content text-left"> 
-                    {% if messages %} 
-                    {% for message in messages %}
-                      <script type="text/javascript" language="JavaScript">
-                         alert("{{message}}")   
-                      </script>
-                    {%endfor%}
-                  {% endif %}         
-         
-                     <!-- layer 1 -->
-                    <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
-                      <h2 class="title1"><span style="color:#4473c5;">Clases</span> <span class="opct">en línea</span></h2>
-                    </div>
-                    <!-- layer 2 -->
-                    <div class="layer-1-2  wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                      <h1 class="title-2-black " >Tú hijo merece una educación de calidad sin importar dónde esté</h1>
-                    </div>
-                    <!-- layer 3 -->
-                    <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                      <a class="ready-btn right-btn page-scroll" href="#pricing">VER PLAN</a>
-                    </div>                        
-                  </div><!--end slider-content-->    
-                </div>
-                <div class="col-md-6 col-sm-12 col-xs-12 ftco-animate d-flex justify-content-end">
-                  <div class="slider-content-form "> 
-                    <div class="main" id="mainForm">
-                            <div class="container-form main-container-form">
-                               <form method="POST" action="{%url 'home'%}" class="appointment-form" id="appointment-form" enctype = "multipart/form-data">
-    
-                                    <h2>¡Recibe información de planes y programas!</h2>
-                                    <p class="text-center">Al recibir su información, uno de nuestros asesores se comunicará con usted.</p><br>
-                                    {% csrf_token %} 
-                                    <div class="form-group-1 "> 
-                                          
-                                        {{form}}
-                                    </div>
-                                    
-                                    <div class="form-submit d-flex justify-content-center">
-                                        <input type="submit" name="submit" id="submit" class="submit" value="¡Quiero recibir información!" />
-                                    </div>
-                                  </form>
-                            </div>
-                          </div> <!--fin main-->
-    
-                  </div> 
-                </div>    
-    
-              </div>
+   <!--AQUI VAN LOS DEMAS SLIDERS-->
+
+  <!-- direction 2 -->
+  <div id="slider-direction-2" class="slider-direction slider-two">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-12 col-xs-12 d-flex justify-content-start">
+          <div class="slider-content text-left"> 
+            <!-- layer 1 -->
+            <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
+            <h2 class="title1"><span style="color:#4473c5;">Clases</span> <span class="opct">en línea</span></h2>
             </div>
-          </div>
+            <!-- layer 2 -->
+            <div class="layer-1-2  wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
+            <h1 class="title-2-black " >Tú hijo merece una educación de calidad sin importar dónde esté</h1>
+            </div>
+            <!-- layer 3 -->
+            <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
+            <a class="ready-btn right-btn page-scroll" href="#pricing">VER PLAN</a>
+            </div>                        
+          </div><!--end slider-content-->    
+        </div><!--end colmd6-->  
 
-      <!-- direction 3 -->
-      <div id="slider-direction-3" class="slider-direction slider-two">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6 col-sm-12 col-xs-12">
-              <div class="slider-content text-left">       
-                        <!-- layer 1 -->
-                        <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
-                          <h2 class="title1 "><span class="opct">Primaria</span></h2>
-                        </div>
-                        <!-- layer 2 -->
-                        <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                          <h1 class="title2 title-2-black-2">Contamos con maestros especializados en las áreas de español, matematicas e inglés</h1>
-                        </div>
-                        <!-- layer 3 -->
-                        <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                          <a class="ready-btn right-btn page-scroll" href="#pricing">VER PLAN</a>           
-                        </div>        
-                       
-              </div>
-            </div><!--end md-6 1-->
-            <div class="col-md-6 col-sm-12 col-xs-12 ftco-animate d-flex justify-content-end">
-              <div class="slider-content-form "> 
-                <div class="main" id="mainForm">
-                        <div class="container-form main-container-form" >
-                            <form method="POST" action="{%url 'home'%}" class="appointment-form" id="appointment-form" enctype = "multipart/form-data">
+        <div class="col-md-6 col-sm-12 col-xs-12 ftco-animate d-flex justify-content-end">
+          <div class="slider-content-form "> 
+            <div class="main" id="mainForm">
+                <div class="container-form main-container-form">
+                    <form method="POST" action="{%url 'home'%}" class="appointment-form" id="appointment-form" enctype = "multipart/form-data">
+    
+                        <h2>¡Recibe información de planes y programas!</h2>
+                        <p class="text-center">Al recibir su información, uno de nuestros asesores se comunicará con usted.</p><br>
+                        {% csrf_token %} 
+                        <div class="form-group-1 "> 
+                            {{form.media.js}}
+                            {{form.as_p}}
+                            {% for id, country in form.country.choices %}
+                                <option value="{{ id }}">{{country}}</option>
+                            {% endfor %}
 
-                                <h2>¡Recibe información de planes y programas!</h2>
-                                <p class="text-center">Al recibir su información, uno de nuestros asesores se comunicará con usted.</p><br>
-                                {% csrf_token %} 
-                                <div class="form-group-1 "> 
-                                      
-                                    {{form}}
-                                </div>
-                                
-                                <div class="form-submit d-flex justify-content-center">
-                                    <input type="submit" name="submit" id="submit" class="submit" value="¡Quiero recibir información!" />
-                                </div>
-                              </form>
                         </div>
-                      </div> <!--fin main-->
-              </div> 
-            </div>  <!--end md-6 2-->  
-          </div><!--end row-->
-        </div>
-      </div>
+                        
+                        <div class="form-submit d-flex justify-content-center">
+                            <input type="submit" name="submit" id="submit" class="submit" value="¡Recibir información!" />
+                        </div>
+                      </form>
+                </div>
+              </div> <!--fin main-->
+        
+          </div> 
+        </div> 
 
-      <!-- direction 4 -->
-      <div id="slider-direction-4" class="slider-direction slider-two">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6 col-sm-12 col-xs-12">
-              <div class="slider-content text-left">
-             
-                        <!-- layer 1 -->
-                        <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
-                          <h2 class="title1"><span class="opct">Secundaria</span></h2>
-                        </div>
-                        <!-- layer 2 -->
-                        <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                          <h1 class="title2 title-2-black-2">Nuestra oferta incluye las materias de matemáticas, física, química, español e inglés</h1>
-                        </div>
-                        <!-- layer 3 -->
-                        <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                          <a class="ready-btn right-btn page-scroll" href="#pricing">VER PLAN</a>
-                          
-                        </div>        
-      
-              </div><!-- end slider--> 
-            </div><!--end md-6 1-->  
-            <div class="col-md-6 col-sm-12 col-xs-12 ftco-animate d-flex justify-content-end">
-              <div class="slider-content-form "> 
-                <div class="main" id="mainForm">
-                        <div class="container-form main-container-form">
-                            <form method="POST" action="{%url 'home'%}" class="appointment-form" id="appointment-form" enctype = "multipart/form-data">
-
-                                <h2>¡Recibe información de planes y programas!</h2>
-                                <p class="text-center">Al recibir su información, uno de nuestros asesores se comunicará con usted.</p><br>
-                                {% csrf_token %} 
-                                <div class="form-group-1 "> 
-                                      
-                                    {{form}}
-                                </div>
-                                
-                                <div class="form-submit d-flex justify-content-center">
-                                    <input type="submit" name="submit" id="submit" class="submit" value="¡Quiero recibir información!" />
-                                </div>
-                              </form>
-                        </div>
-                      </div> <!--fin main-->
-              </div> 
-            </div>  <!--end md-6 2--> 
-          </div>
-        </div>
-      </div>
+      </div><!--end row-->
     </div>
-  </div><!-- End Slider -->
-    <section class="movilForm" id="blockForm">
-        <div class="main">
-          <div class="container-form ">
-              <form method="POST" action="{%url 'home'%}" class="appointment-form" id="appointment-form" enctype = "multipart/form-data">
-                <h2>¡Recibe información de planes y programas!</h2>
-                <p class="text-center">Al recibir su información, uno de nuestros asesores se comunicará con usted.</p><br>
-                {% csrf_token %} 
-                <div class="form-group-1 "> 
-                      
-                    {{form}}
-                </div>
-                
-                <div class="form-submit d-flex justify-content-center">
-                    <input type="submit" name="submit" id="submit" class="submit" value="¡Quiero recibir información!"/>
-                </div>
-              </form>
-          </div>
-        </div> <!--fin main-->
-     </section>
+  </div>
 
+
+  <!-- direction 3 -->
+  <div id="slider-direction-3" class="slider-direction slider-two">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+          <div class="slider-content text-left">       
+            <!-- layer 1 -->
+            <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
+            <h2 class="title1 "><span class="opct">Primaria</span></h2>
+            </div>
+            <!-- layer 2 -->
+            <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
+            <h1 class="title2 title-2-black-2">Contamos con maestros especializados en las áreas de español, matematicas e inglés</h1>
+            </div>
+            <!-- layer 3 -->
+            <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
+            <a class="ready-btn right-btn page-scroll" href="#pricing">VER PLAN</a>           
+            </div>        
+          </div>
+        </div><!--end md-6 1-->
+        <div class="col-md-6 col-sm-12 col-xs-12 ftco-animate d-flex justify-content-end">
+          <div class="slider-content-form "> 
+            <div class="main" id="mainForm">
+                    <div class="container-form main-container-form">
+                       <form method="POST" action="{%url 'home'%}" class="appointment-form" id="appointment-form" enctype = "multipart/form-data">
+        
+                            <h2>¡Recibe información de planes y programas!</h2>
+                            <p class="text-center">Al recibir su información, uno de nuestros asesores se comunicará con usted.</p><br>
+                            {% csrf_token %} 
+                            <div class="form-group-1 "> 
+                                {{form.media.js}}
+                                {{form.as_p}}
+
+                            </div>
+                            
+                            <div class="form-submit d-flex justify-content-center">
+                                <input type="submit" name="submit" id="submit" class="submit" value="¡Recibir información!" />
+                            </div>
+                          </form>
+                    </div>
+                  </div> <!--fin main-->
+          </div> 
+        </div> 
+      </div><!--end row-->
+    </div><!--end container-->
+  </div>
+
+  <!-- direction 4 -->
+    <div id="slider-direction-4" class="slider-direction slider-two">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-sm-12 col-xs-12">
+            <div class="slider-content text-left">
+              <!-- layer 1 -->
+              <div class="layer-1-1 hidden-xs wow slideInDown" data-wow-duration="2s" data-wow-delay=".2s">
+                <h2 class="title1"><span class="opct">Secundaria</span></h2>
+              </div>
+              <!-- layer 2 -->
+              <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
+                <h1 class="title2 title-2-black-2">Nuestra oferta incluye las materias de matemáticas, física, química, español e inglés</h1>
+              </div>
+              <!-- layer 3 -->
+              <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
+                 <a class="ready-btn right-btn page-scroll" href="#pricing">VER PLAN</a>
+              </div>        
+            </div><!-- end slider--> 
+          </div><!--end md-6 1-->  
+
+          <div class="col-md-6 col-sm-12 col-xs-12 ftco-animate d-flex justify-content-end">
+            <div class="slider-content-form "> 
+              <div class="main" id="mainForm">
+                  <div class="container-form main-container-form">
+                      <form method="POST" action="{%url 'home'%}" class="appointment-form" id="appointment-form" enctype = "multipart/form-data">
+      
+                          <h2>¡Recibe información de planes y programas!</h2>
+                          <p class="text-center">Al recibir su información, uno de nuestros asesores se comunicará con usted.</p><br>
+                          {% csrf_token %} 
+                          <div class="form-group-1 "> 
+                              {{form.media.js}}
+                              {{form.as_p}}
+                              {% for id, country in form.country.choices %}
+                                  <option value="{{ id }}">{{country}}</option>
+                              {% endfor %}
+
+                          </div>
+                          
+                          <div class="form-submit d-flex justify-content-center">
+                              <input type="submit" name="submit" id="submit" class="submit" value="¡Recibir información!" />
+                          </div>
+                        </form>
+                  </div>
+                </div> <!--fin main-->
+            </div> 
+          </div> 
+     
+        </div><!--end row --> 
+      </div><!--end container--> 
+    </div><!--end slider 4--> 
+
+ </div><!--   ======= End Slider Section ======= -->
+ <!-- ======= Movil======= -->
+
+  <section class="movilForm" id="blockForm">
+    <div class="main">
+      <div class="container-form ">
+          <form method="POST" action="{%url 'home'%}" class="appointment-form" id="appointment-form" enctype = "multipart/form-data">
+            <h2>¡Recibe información de planes y programas!</h2>
+            <p class="text-center">Al recibir su información, uno de nuestros asesores se comunicará con usted.</p><br>
+            {% csrf_token %} 
+            <div class="form-group-1 "> 
+              <!--
+                {{ form.media.js }}
+                {{form}}-->
+              
+                
+            </div>
+            
+            <div class="form-submit d-flex justify-content-center">
+                <input type="submit" name="submit" id="submit" class="submit" value="¡Recibir información!"/>
+            </div>
+          </form>
+      </div>
+    </div><!--fin main-->
+  </section>
+ 
 
   <div id="main">
-
+   
     <!-- ======= About Section ======= -->
     <div id="about" class="about-area area-padding">
       <div class="container">
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="section-headline-purple  text-center">
+            <div class="section-headline-blue  text-center">
               <h2>¿Qué es Machtili?</h2>
             </div>
           </div>
@@ -278,13 +303,78 @@
           <!-- End col-->
         </div>
       </div>
-    </div><!-- End About Section -->
+    </div><!-- End About Section
+        <img src="{% static 'core/assets/img/team/teacher_1.jpg' %} " /> 
+    
+    -->
+    <section id="team" class="our-team-area area-padding">>
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="section-headline-mamey  text-center">
+              <h2>Nuestro Equipo</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="row d-flex justify-content-center" >
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="member">
+              <img src="{% static 'core/assets/img/team/teacher_1.jpeg' %} " />
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Lic. Mónica Treviño </h4>
+                  <span>Maestra de Inglés a nivel Kinder, Primaria y Secundaria</span>
+                  <div class="social">
+                    <a href=""><i class="fa fa-plus"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="member">
+              <img src="{% static 'core/assets/img/team/teacher_2.jpg' %}" />
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Lic. Vianney Méndez</h4>
+                  <span>Maestra a nivel Kinder y Primaria</span>
+                  <div class="social">
+                    <a href=""><i class="fa fa-plus"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="member">
+              <img src="{% static 'core/assets/img/team/teacher_3r.jpeg' %}"/>
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Lic. Ma. Fernanda Castañeda </h4>
+                  <span>Maestra de Inglés a nivel Primaria</span>
+                  <div class="social">
+                    <a href=""><i class="fa fa-plus"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+   
         <!-- ======= Pricing Section ======= -->
     <div id="pricing" class="pricing-area area-padding">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <div class="section-headline-blue text-center">
+            <div class="section-headline-yellow text-center">
               <h2>Oferta educativa/Planes</h2>
               <p>En Machtili manejamos un servicio de <b>primer nivel</b> que ponemos a tu
               alcance en 3 diferentes planes.</p>
@@ -328,6 +418,7 @@
                 <li class="check">Atención de dudas de forma remota</li>
                 <li class="check cross">Asesoría para la resolución de tareas</li>
                 <li class="check cross">Acceso ilimitado de material adicional <br> presente en la página</li>
+                <li class="check cross">Conversaciones en Inglés</li> 
                
               </ol>   
             </div>
@@ -342,6 +433,7 @@
                 <li class="check">Atención de dudas de forma remota</li>
                 <li class="check">Asesoría para la resolución de tareas</li>
                 <li class="check cross">Acceso ilimitado de material adicional<br>presente en la página</li>
+                <li class="check cross">Conversaciones en Inglés</li> 
                
               </ol>
             
@@ -357,9 +449,9 @@
                 <li class="check">Atención de dudas de forma remota</li>
                 <li class="check">Asesoría para la resolución de tareas</li>
                 <li class="check">Acceso ilimitado de material adicional <br>presente en la página</li>
+                <li class="check">Conversaciones en Inglés</li> 
                
               </ol>
-                <button onclick="redirectForm()">SOLICITA INFORMACIÓN</button>
             </div>
           </div>
      
@@ -380,7 +472,8 @@
                   <li class="check">2 materias a elegir</li>
                   <li class="check">Atención de dudas de forma remota</li>
                   <li class="check cross">Asesoría para la resolución de tareas</li>
-                  <li class="check cross">Acceso ilimitado de material adicional <br>presente en la página</li>   
+                  <li class="check cross">Acceso ilimitado de material adicional <br>presente en la página</li> 
+                  <li class="check cross">Conversaciones en Inglés</li>   
                </ol>
           
             </div><br>
@@ -393,7 +486,8 @@
                   <li class="check">3 materias a elegir</li>
                   <li class="check">Atención de dudas de forma remota</li>
                   <li class="check">Asesoría para la resolución de tareas</li>
-                  <li class="check cross">Acceso ilimitado de material adicional <br>presente en la página</li>   
+                  <li class="check cross">Acceso ilimitado de material adicional <br>presente en la página</li>
+                  <li class="check cross">Conversaciones en Inglés</li>    
                </ol>
             </div><br>
             <div class="pri_title_col purple-block" id="movil-title6">
@@ -405,111 +499,202 @@
                   <li class="check">5 materias a elegir</li>
                   <li class="check">Atención de dudas de forma remota</li>
                   <li class="check">Asesoría para la resolución de tareas</li>
-                  <li class="check">Acceso ilimitado de material adicional <br>presente en la página</li>   
+                  <li class="check">Acceso ilimitado de material adicional <br>presente en la página</li>
+                  <li class="check">Conversaciones en Inglés</li>     
                </ol>
-              <button onclick="redirectForm()">SOLICITA INFORMACIÓN</button>
+             
             </div>
           </div>
         </div>
         <br>
-        <div class="py-2 text-center">
+        <div class="pri_table_list_btn py-2 text-center">
           <p >¡En Machtili contamos con planes desde <strong>$180.00</strong> pesos semanales!</p>
+          <br>
+          <button onclick="redirectForm()">SOLICITA INFORMACIÓN</button>
         </div>
+       
       </div><!--end container-->
-  
-    
 
-    </div><!-- End Pricing Section -->    
+    </div><!-- End Pricing Section -->   
+     <!-- ======= Invitation Section ======= -->
+     <div class="suscribe-area" id="comipems">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs=12">
+            <div class="suscribe-text  text-center">
+              <h2 style="color: #fff;">Curso COMIPEMS</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- End Invitation Section --> 
+    <!-- ======= COMIPEMS Section ======= -->
+ 
+    <div id="about" class="about-area area-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="section-headline text-center">
+              <h3>
+                Con duración de 12 semanas, más de 140 horas, en modalidades de <br>Lunes a Viernes y Fin de Semana. 
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <!-- single-well start-->
+          <div class="col-md-5 col-sm-5 col-xs-12">
+            <div class="well-left">
+              <div class="single-well">
+      
+                <img  src="{% static 'core/assets/img/services/student_2.jpg' %}"  height="80%;"
+                width="80%;"/>
+            
+              </div>
+            </div>
+          </div>
+          <!-- single-well end-->
+          <div class="col-md-7 col-sm-7 col-xs-12 ">
+            <div class="well-middle">
+              <div class="single-well">
+                <p>
+                  Abarcamos todos los temas indicados en el temario del COMIPEMS en:
+                </p>
+                <ul>
+                  <li>
+                    <i class="fa fa-cube"></i> Matemáticas y Habilidad matemática
+                  </li>
+                  <li>
+                    <i class="fa fa-book"></i> Español y Habilidad verbal
+                  </li>
+                  <li>
+                    <i class="fa fa-flask"></i> Física y Química
+                  </li>
+                  <li>
+                    <i class="fa fa-leaf"></i> Biología
+                  </li>
+                  <li>
+                    <i class="fa fa-globe"></i> Geografía
+                  </li>
+                  <li>
+                    <i class="fa fa-flag"></i> Historia de México y Universal
+                  </li>
+                  <li>
+                    <i class="fa fa-blind"></i>Civismo
+                  </li>
+                </ul>
+                <br>
+                <p>
+                  Además de las clases en línea, en tiempo real, con los maestros más preparados, recibirás:
+                </p>
+                <ul>
+                  <li>
+                    <i class="fa fa-check"></i> Exámenes simulacro
+                  </li>
+                  <li>
+                    <i class="fa fa-check"></i> Material didáctico
+                  </li>
+                  <li>
+                    <i class="fa fa-check"></i> Lecturas de exámenes pasados
+                  </li>
+                  <li>
+                    <i class="fa fa-check"></i> Ejercicios para practicar 
+                  </li>
+                  <li>
+                    <i class="fa fa-check"></i>Atención remota de dudas
+                  </li>
+                </ul>
+                <br>
+                <p style="color: #f3c166;">
+                  <strong>Cupo Limitado</strong> 
+                </p>
+              </div>
+
+            </div>
+        
    
-        <!-- ======= Contact Section ======= -->
-    <div id="contact" class="contact-area">
-      <div class="contact-inner area-padding">
-            <div class="contact-overly"></div>
-            <div class="container ">
-              <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                  <div class="section-headline-yellow text-center">
-                    <h2>Contáctanos</h2>
-                  </div>
+          </div>
+          <!-- End col-->
+        
+        </div>
+      </div>
+    </div><!-- End COMIPEMS Section --> 
+   
+    <!-- ======= Contact Section ======= -->
+    <div id="contact" class="contact-area area-padding">
+      <div class="container ">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="section-headline-mamey text-center">
+                <h2>Contáctanos</h2>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <!-- Start contact icon column -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="contact-icon text-center">
+                <div class="single-icon">
+                  <i class="fa fa-whatsapp"></i>
+                  <p>
+                    Cel: 55 7979 0890<br>
+                    <span>Lunes-Viernes (9am-9pm)</span>
+                  </p>
                 </div>
               </div>
-              <div class="row">
-                <!-- Start contact icon column -->
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                  <div class="contact-icon text-center">
-                    <div class="single-icon">
-                      <i class="fa fa-whatsapp"></i>
-                      <p>
-                        Cel: 55 7979 0890<br>
-                        <span>Lunes-Viernes (9am-9pm)</span>
-                      </p>
-                    </div>
-                  </div>
+            </div>
+              <!-- Start contact icon column -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="contact-icon text-center">
+                <div class="single-icon">
+                  <i class="fa fa-envelope-o"></i>
+                  <p>
+                    Correo: contacto@machtili.com.mx<br>
+                  </p>
                 </div>
-                 <!-- Start contact icon column -->
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                  <div class="contact-icon text-center">
-                    <div class="single-icon">
-                      <i class="fa fa-envelope-o"></i>
-                      <p>
-                        Correo: contacto@machtili.com.mx<br>
-                      </p>
-                    </div>
-                  </div>
+              </div>
+            </div>
+            <!-- Start contact icon column -->
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="contact-icon text-center">
+                <div class="single-icon">
+                  <i class="fa fa-facebook"></i>
+                  <p>
+                    facebook:
+                    <a href="https://www.facebook.com/machtili"><span>Machtili</span></a>
+                  </p>
                 </div>
-                <!-- Start contact icon column -->
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                  <div class="contact-icon text-center">
-                    <div class="single-icon">
-                      <i class="fa fa-facebook"></i>
-                      <p>
-                        facebook:
-                        <a href="https://www.facebook.com/machtili"><span>Machtili</span></a>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-             </div>
-             <!--Facebook section-->
-             <div class="row">
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ">
-                    <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmachtili&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
-                  width="350" height="500" style="border-left:20px solid; border-right:20px solid; border-top:40px solid;border-bottom:20px solid;border-radius:25px; overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" 
-                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-                    </iframe>
-                </div><!--end facebook section-->
-                 <!-- Start  contact -->
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                  <div class="form contact-form">
-                    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-                      <div class="form-group">
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                        <div class="validate"></div>
-                      </div>
-                      <div class="form-group">
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                        <div class="validate"></div>
-                      </div>
-                      <div class="form-group">
-                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                        <div class="validate"></div>
-                      </div>
-                      <div class="form-group">
-                        <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                        <div class="validate"></div>
-                      </div>
-                      <div class="mb-3">
-                        <div class="loading">Loading</div>
-                        <div class="error-message"></div>
-                        <div class="sent-message">Your message has been sent. Thank you!</div>
-                      </div>
-                      <div class="text-center"><button type="submit">Send Message</button></div>
-                    </form>
-                  </div>
-                </div>
-                <!-- End Left contact -->
-             </div><!--end row-->
+              </div>
+            </div>
           </div>
+          <!--Facebook section-->
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 mt-4">
+                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fmachtili&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
+              width="375" height="550" style="border-left:20px solid; border-right:20px solid; border-top:40px solid;border-bottom:20px solid;border-radius:25px; overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" 
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                </iframe>
+            </div><!--end facebook section-->
+              <!-- Start  contact -->
+            <div class="col-md-6 col-sm-12 col-xs-12">
+              <div class="suscribe-text text-dark text-center">
+                <h3>¿Tienes alguna pregunta? Escribenos.</h3>
+              </div>
+        
+              <div class="form contact-form">
+                <form method="POST" action="{%url 'doubt'%}" class="email-form" enctype = "multipart/form-data">
+                  {% csrf_token %} 
+                  {{form_doubt}}
+              
+                  <div class="form-submit d-flex justify-content-center">
+                    <input type="submit" name="submit" id="submit" class="submit" value="Enviar Mensaje" />
+                  </div>
+                </form>
+              </div>
+            </div>
+            <!-- End Left contact -->
+          </div><!--end row-->
+          
        </div>
     </div>
 
@@ -539,11 +724,16 @@
 
 
  {% block script%}
+    <script type="text/javascript" src="{% static '/smart-selects/admin/js/chainedfk.js' %}"></script>
+    <script type="text/javascript" src="{% static '/smart-selects/admin/js/bindfields.js' %}"></script>
+    <script type="text/javascript" src="{% static '/smart-selects/admin/js/chainedm2m.js' %}"></script>
+    
     <script>
-        
+       
+
         function alert(message) {
-              alert(message)
-            }
+          alert(message)
+        }
         function redirectForm(){
             
             if(window.matchMedia("(max-width: 768px)").matches){
@@ -557,10 +747,13 @@
     
         function addForm(x) {
           var movilForm = document.getElementById("blockForm");
+      
           if (x.matches) {   
              movilForm.style.display="block"
+       
     
           }else {        
+    
             movilForm.style.display="none"
           }
         }

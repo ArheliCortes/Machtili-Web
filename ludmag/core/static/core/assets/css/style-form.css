@@ -50,7 +50,7 @@ list-type-ulli, ul {
 
 .main p {
   margin-bottom: 0px; 
-  color: #000000;
+  color: #797979;
 
 }
 
@@ -84,31 +84,30 @@ list-type-ulli, ul {
 .clear {
   clear: both; }
 
+  .main {
+    padding: 80px 0;
+    position: relative; }
+  
+  .container-form {
+    width: 356px;
+    background: #fff;
+    border: 2px solid #586f98;
+    writing-mode: horizontal-tb;
+    border-radius: 50px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -o-border-radius: 50px;
+    -ms-border-radius: 50px; 
+    display: block;
+  
 
-
-.main {
-  padding: 80px 0;
-  position: relative; }
-
-.container-form {
-  width: 356px;
-  background: #fff;
-  border: 2px solid #586f98;
-  writing-mode: horizontal-tb;
-  border-radius: 50px;
-  -moz-border-radius: 50px;
-  -webkit-border-radius: 50px;
-  -o-border-radius: 50px;
-  -ms-border-radius: 50px; 
-  display: block;
-
-
-
-}
+  }
 
 
 .appointment-form {
-  padding: 30px 30px 20px 30px; }
+
+  padding: 25px 25px 15px 25px; 
+}
 
 input, select {
   width: 100%;
@@ -118,7 +117,7 @@ input, select {
   display: block;
   border-radius: 5px;
   border: 2px solid #bec6d5;
-  padding: 3px 9px;
+  padding: 2px 9px;
   color: #222;
   margin-bottom: 18px;
   font-family: "Source Sans Pro",sans-serif;
@@ -128,9 +127,9 @@ input, select {
 }
 input:focus, select:focus {
   color: #222;
-  border-bottom: 2px solid #657995; }
+  border-bottom: 2px solid #4474c5; }
 select {
-
+    
     background-color: rgb(255, 255, 253);
     background: #fff url(https://x3jme3vmctf3dmlkql5tzx17-wpengine.netdna-ssl.com/wp-content/themes/aprende/assets/images/ico_arrow_select.svg) right 10px top 50% no-repeat;
     color: #222;
@@ -140,7 +139,7 @@ select {
 
 
 .label-agree-term {
-  color: #999; }
+  color: rgb(155, 14, 14); }
 
 .term-service {
   color: #222; }
@@ -164,7 +163,8 @@ select {
   -o-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7);
   -ms-box-shadow: 0px 1px 15px 0px rgba(73, 102, 177, 0.7); }
   .submit:hover {
-    background: #8e5909; }
+    background: #e0b994; 
+  }
 
 
 #confirm_type {
@@ -232,6 +232,7 @@ select {
     width: 60%;
   
   } 
+  /* aqui cambie */
   .main .main-container-form{
       margin-top: 600px;
   }
@@ -256,6 +257,7 @@ select {
   .container-form {
     width: 80%;
   } 
+  /* aqui cambie */
   .main .main-container-form{
       margin-top: 600px;
   }

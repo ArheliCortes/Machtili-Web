@@ -2,36 +2,35 @@ from django import forms
 from django.forms.widgets import Select
 from django.utils.encoding import force_text
 from django.utils.html import escape, conditional_escape
+from .models import ClientePotencial,Plan,Grado,Curso
+
+
 
 # iterable 
-COURSE_CHOICES =( 
-     ('-- Grado escolar --', 
+PLAN_CHOICES =( 
+     ('-- Curso de ínteres --', 
        [
-            
-            ("1", "kinder"),
-            ("2", "Primer año de Primaria"),  
-            ("3", "Segundo año de Primaria"), 
-            ("4", "Tercer año de Primaria"), 
-            ("5", "Cuarto año de Primaria"), 
-            ("6", "Quinto año de Primaria"), 
-            ("7", "Sexto año de Primaria"), 
-            ("8", "Primer año de Secundaria"), 
-            ("9", "Segundo año de Secundaria"), 
-            ("10", "Tercer año de Secundaria"),
+            (1, "kinder"),
+            (2, "Primaria"),  
+            (3, "Secundaria"),
+            (4, "CONDUSEF"),
        ]
      ),
 ) 
 
-PLAN_CHOICES =( 
-    ('-- Plan de ínteres --', 
+GRADE_CHOICES =( 
+    ('-- Grado escolar --', 
       (
         ("1", "Básico"),
         ("2", "Avanzado"),
         ("3", "Premium"), 
-        ("4", "CONDUSEF"), 
       )
     ),
 )
+
+
+
+
 class SelectWithDisabled(Select):
     """
     Subclass of Django's select widget that allows disabling options.
@@ -58,8 +57,45 @@ class Formulario (forms.Form) :
     lastname = forms.CharField(label='',widget=forms.TextInput(attrs={'placeholder': 'Apellido'}),error_messages={'required': 'Completa este campo'}, max_length=100)
     email = forms.EmailField(label='',widget=forms.TextInput(attrs={'placeholder': 'Correo'}),error_messages={'required': 'Completa este campo'})
     phone = forms.IntegerField(label='',widget=forms.TextInput(attrs={'placeholder': 'Télefono'}),error_messages={'required': 'Completa este campo'})
-    grade = forms.ChoiceField(label='',choices = COURSE_CHOICES)
     plan = forms.ChoiceField(label='',choices = PLAN_CHOICES)
-    
-    
+    grade = forms.ChoiceField(label='',choices = GRADE_CHOICES)
 
+
+
+class FormDoubts(forms.Form) :
+    name = forms.CharField(label='',widget=forms.TextInput(attrs={'placeholder': 'Tu Nombre'}),error_messages={'required':'Completa este campo'},max_length=100)
+    email = forms.EmailField(label='',widget=forms.TextInput(attrs={'placeholder':'Tu Correo'}),error_messages={'required':'Completa este campo'})
+    phone = forms.IntegerField(label='',widget=forms.TextInput(attrs={'placeholder':'Número de Contacto'}),error_messages={'required':'Completa este campo'})
+    message = forms.CharField(label='',widget=forms.Textarea(attrs={'placeholder':'Cuentanos tus dudas.'}),error_messages={'required':'Completa este campo'})
+
+class CustomMMCF(forms.ModelMultipleChoiceField):
+    def label_from_instance(self, member):
+        return "%s" % member.name
+
+class ClientePotencialForm(forms.ModelForm):
+
+    class Meta:
+        model = ClientePotencial
+        fields = ['name', 'lastname','email', 'phone','curso', 'grado','plan']
+                
+        widgets = {
+            'name': forms.TextInput(attrs={'placeholder': 'Nombre(s)'}),
+            'lastname': forms.TextInput(attrs={'placeholder': 'Apellidos'}),
+            'email': forms.TextInput(attrs={'placeholder': 'usuario@ejemplo.com'}),
+            'phone' : forms.TextInput(attrs={'placeholder':'(52) 550 000 0000'}),
+        }
+        labels = {
+            "name": "",
+            "lastname": "",
+            "email": "",
+            "phone": "",
+            "curso": "Curso de ínteres",
+            "grado": "",
+            "plan": "",
+
+        }
+
+
+
+    
+  

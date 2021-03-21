@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'smart_selects',
+    'phone_field',
 ]
 
 
@@ -133,3 +135,5 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_HOST_USER=env.str('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD=env.str('EMAIL_HOST_PASSWORD')
 EMAIL_PORT =587
+USE_DJANGO_JQUERY = True
+JQUERY_URL = False

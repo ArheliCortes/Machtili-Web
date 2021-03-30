@@ -1,14 +1,29 @@
 {% extends "core/base.html" %}
 {% block title %}Principal{% endblock  %}
 {% load static %}
-{%block itemshome%}
-      <li class="active"><a href="#header">Principal</a></li>
-      <li><a href="#about">Nosotros</a></li>
-      <li><a href="#pricing">Oferta académica/Planes</a></li>
-      <li><a href="{%url 'stop'%}">Material de apoyo</a></li>
-      <li><a href="{%url 'stop'%}">Preguntas Frecuentes</a></li>
-      <li><a href="{%url 'stop'%}">Blog</a></li>
+{%block header%}
+<header id="header" class="fixed-top">
+  <div class="container d-flex">
 
+    <div class="logo mr-auto">
+      <h1 class="text-light"><a href="{% url 'home'%}">Machtili</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+    </div>
+
+    <nav class="nav-menu d-none d-lg-block">
+      <ul>
+        <li class="active"><a href="#header">Principal</a></li>
+        <li><a href="#about">Nosotros</a></li>
+        <li><a href="#pricing">Oferta académica/Planes</a></li>
+        <li><a href="{%url 'stop'%}">Material de apoyo</a></li>
+        <li><a href="{%url 'stop'%}">Preguntas Frecuentes</a></li>
+        <li><a href="{%url 'stop'%}">Blog</a></li>
+
+      </ul>
+    </nav><!-- .nav-menu -->
+  </div>
+</header><!-- End Header -->
 {%endblock%}
 {% block content %}
     
@@ -123,11 +138,7 @@
                         <div class="form-group-1 "> 
                             {{form.media.js}}
                             {{form.as_p}}
-                            {% for id, country in form.country.choices %}
-                                <option value="{{ id }}">{{country}}</option>
-                            {% endfor %}
-
-                        </div>
+                         </div>
                         
                         <div class="form-submit d-flex justify-content-center">
                             <input type="submit" name="submit" id="submit" class="submit" value="¡Recibir información!" />
@@ -224,9 +235,7 @@
                           <div class="form-group-1 "> 
                               {{form.media.js}}
                               {{form.as_p}}
-                              {% for id, country in form.country.choices %}
-                                  <option value="{{ id }}">{{country}}</option>
-                              {% endfor %}
+              
 
                           </div>
                           
@@ -318,51 +327,22 @@
         </div>
 
         <div class="row d-flex justify-content-center" >
-
+        {% for pf in profesor %}
           <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="member">
-              <img src="{% static 'core/assets/img/team/teacher_1.jpeg' %} " />
+              <img src="{{pf.urlImage.url}}" />
               <div class="member-info">
                 <div class="member-info-content">
-                  <h4>Lic. Mónica Treviño </h4>
-                  <span>Maestra de Inglés a nivel Kinder, Primaria y Secundaria</span>
+                  <h4>Lic. {{pf.name}} {{pf.paternal_surname}}</h4>
+                  <span>{{pf.description}}</span>
                   <div class="social">
-                    <a href=""><i class="fa fa-plus"></i></a>
+                    <a href="{%url 'resume' profesor_id=pf.id%}"><i class="fa fa-plus"></i></a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="member">
-              <img src="{% static 'core/assets/img/team/teacher_2.jpg' %}" />
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Lic. Vianney Méndez</h4>
-                  <span>Maestra a nivel Kinder y Primaria</span>
-                  <div class="social">
-                    <a href=""><i class="fa fa-plus"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="member">
-              <img src="{% static 'core/assets/img/team/teacher_3r.jpeg' %}"/>
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Lic. Ma. Fernanda Castañeda </h4>
-                  <span>Maestra de Inglés a nivel Primaria</span>
-                  <div class="social">
-                    <a href=""><i class="fa fa-plus"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        {%endfor%}   
 
         </div>
 

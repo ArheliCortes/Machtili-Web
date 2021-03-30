@@ -7,6 +7,8 @@ from django.contrib import messages
 from django.core.mail import EmailMultiAlternatives
 from django.core.mail import BadHeaderError
 from .form import *
+from .models import ProfesorResume,Paragraph
+from django.urls import resolve
 # Create your views here.
 
 def home (request):
@@ -16,9 +18,22 @@ def home (request):
         context = {} 
         context['form'] = ClientePotencialForm() 
         context['form_doubt'] = FormDoubts()
+        context['profesor'] = ProfesorResume.objects.all()
         template_name = "core/home.html"
         response = render(request,template_name,context)    
     return response 
+
+def resume(request,profesor_id=1):
+    try:
+        current_url = resolve(request.path_info).kwargs
+        profesor_id = int(current_url['profesor_id'])
+        profesor_selected = ProfesorResume.objects.get(pk=profesor_id)
+        paragraph = Paragraph.objects.filter(profesor__name__contains=profesor_selected)
+        template_name = "core/base_resume.html"
+        return render(request,template_name,{'profesor':profesor_selected,'paragraph':paragraph})
+
+    except KeyError:
+        raise Http404
 
 def doubt (request):
     if request.method == "POST" :

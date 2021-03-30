@@ -8,7 +8,6 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-
     <!-- Descomentar cuando se tenga el icono
     <link href="assets/img/mi_icono.png" rel="apple-touch-icon">
     -->
@@ -30,33 +29,22 @@
     <!----Template Formulario --->
     <link rel="stylesheet" href="{% static 'core/assets/css/style-form.css' %}">
 
+     <!----Template Resume --->
+    {%block resume_style%}{%endblock%}
+
   </head>
 
   <body data-spy="scroll" data-target="#navbar-example" {% block style-uc %}{% endblock %}>
 
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex">
+  {%block header%} 
+  {% endblock %}
 
-      <div class="logo mr-auto">
-        <h1 class="text-light"><a href="{% url 'home'%}">Machtili</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      </div>
-
-      <nav class="nav-menu d-none d-lg-block">
-        <ul>
-          {%block itemshome%}{%endblock%}
-
-        </ul>
-      </nav><!-- .nav-menu -->
-    </div>
-  </header><!-- End Header -->
   {%block content-uc%}
   {% endblock %}
+
   {% block content %}
   {% endblock  %}
-
 
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>

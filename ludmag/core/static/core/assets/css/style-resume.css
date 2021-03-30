@@ -11,27 +11,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
-  --blue: #007bff;
-  --indigo: #6610f2;
-  --purple: #6f42c1;
-  --pink: #e83e8c;
-  --red: #dc3545;
-  --orange: #bd5d38;
-  --yellow: #ffc107;
-  --green: #28a745;
-  --teal: #20c997;
-  --cyan: #17a2b8;
-  --white: #fff;
-  --gray: #6c757d;
-  --gray-dark: #343a40;
-  --primary: #bd5d38;
-  --secondary: #6c757d;
-  --success: #28a745;
-  --info: #17a2b8;
-  --warning: #ffc107;
-  --danger: #dc3545;
-  --light: #f8f9fa;
-  --dark: #343a40;
+ 
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
@@ -97,61 +77,9 @@ p.center{
   font-style: italic;
   color:  #d39e00
 }
-
-
-abbr[title],
-abbr[data-original-title] {
-  text-decoration: underline;
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
-  cursor: help;
-  border-bottom: 0;
-  -webkit-text-decoration-skip-ink: none;
-          text-decoration-skip-ink: none;
+p strong{
+  color:  #4473c5
 }
-
-
-
-
-b,
-strong {
-  font-weight: bolder;
-}
-
-small {
-  font-size: 80%;
-}
-
-sub,
-sup {
-  position: relative;
-  font-size: 75%;
-  line-height: 0;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-
-figure {
-  margin: 0 0 1rem;
-}
-
-img {
-  vertical-align: middle;
-  border-style: none;
-}
-
-
-
-
-
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -191,29 +119,6 @@ h6, .h6 {
   font-weight: 300;
 }
 
-.display-1 {
-  font-size: 6rem;
-  font-weight: 300;
-  line-height: 1.2;
-}
-
-.display-2 {
-  font-size: 5.5rem;
-  font-weight: 300;
-  line-height: 1.2;
-}
-
-.display-3 {
-  font-size: 4.5rem;
-  font-weight: 300;
-  line-height: 1.2;
-}
-
-.display-4 {
-  font-size: 3.5rem;
-  font-weight: 300;
-  line-height: 1.2;
-}
 
 hr {
   margin-top: 1rem;
@@ -233,7 +138,6 @@ mark,
   padding: 0.2em;
   background-color: #fcf8e3;
 }
-
 
 
 .img-fluid {
@@ -3586,6 +3490,7 @@ input[type=button].btn-block {
     padding-right: 0;
     padding-left: 0;
   }
+  
 }
 @media (min-width: 992px) {
   .navbar-expand-lg {
@@ -5536,7 +5441,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #183a77 !important;
+  background-color: #183a77de !important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
@@ -9488,7 +9393,7 @@ h1 {
   #sideNav {
     text-align: center;
     position: fixed;
-    top: 0;
+    top: 6%;
     left: 0;
     display: flex;
     flex-direction: column;
@@ -9551,4 +9456,68 @@ section.resume-section .resume-section-content {
     padding-top: 5rem;
     padding-bottom: 5rem;
   }
+}
+/*----- Componant: Top Navigation Bar ----- */
+
+.app-header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  
+  z-index: 1030;
+  padding-right: 15px;
+}
+
+
+@media (min-width: 768px) {
+  .app-header {
+    padding-right: 30px;
+
+  }
+}
+
+@media print {
+  .app-header {
+    display: none;
+  }
+}
+p.profesion{
+  color: #fff;
+  font-style: italic;
+  font-size: 14px;
+
+
+}
+.app-header__logo {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  color: #fff;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  padding: 0 15px;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 50px;
+}
+
+@media (min-width: 768px) {
+  .app-header__logo {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    display: block;
+    width: 272px;
+    background-color: #284a84;
+  }
+}
+
+.app-header__logo:focus, .app-header__logo:hover {
+  text-decoration: none;
+  color: #fff;
 }

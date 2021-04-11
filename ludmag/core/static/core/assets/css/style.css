@@ -587,10 +587,10 @@ div#preloader {
 }
 
 /*--------------------------------------------------------------
-# Slider
+# Slider#bfb9b28a 
 --------------------------------------------------------------*/
 .movilForm{
-  background:#bfb9b28a ;
+  background:rgba(5, 19, 60, 1);
 
 }
 .container-home{
@@ -602,8 +602,6 @@ div#preloader {
   color: #fff;
   position: relative;
   text-align: center;
-
-
 
 }
 .slider-one{

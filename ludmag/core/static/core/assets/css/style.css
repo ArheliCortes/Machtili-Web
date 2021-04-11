@@ -269,6 +269,7 @@ div#preloader {
   font-weight: 600;
   margin-bottom: 70px;
   position: relative;
+  color: #283d50;
   text-transform: uppercase;
 }
 
@@ -340,7 +341,7 @@ div#preloader {
   #header {
     height: 60px;
     padding: 10px 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(5, 19, 60, 0.8);
   }
   #header .logo h1 {
     font-size: 28px;
@@ -1170,14 +1171,14 @@ preview-2
 # Pricing
 --------------------------------------------------------------*/
 .pricing-area {
-  background:#ffffff none repeat scroll 0 0;
+  background:#fff none repeat scroll 0 0;
 }
 .pricing-area p{
   font-size: 18px;
+  color: #000;
 }
 .movil-pri_title_col  h3 {
   color: #fff;
-
   display: inline-block;
   font-size: 23px;
   font-weight: 600;
@@ -1202,7 +1203,7 @@ preview-2
 .pri_title{
   text-align: center;
   transition: all 0.4s ease 0s;
-  background: rgba(0, 0, 0, 0.0);
+  background: #fff;
   padding-top: 200px;
   
 }
@@ -1213,7 +1214,7 @@ preview-2
   
 }
 .pri_title h3 {
-  color: #333;
+  color: #444;
   font-size: 24px;
   font-weight: 700;
   line-height: 25px;
@@ -1223,7 +1224,7 @@ preview-2
 }
 
 .pri_title_col h3 {
-  color: #333;
+  color: #444;
   font-size: 24px;
   font-weight: 700;
   line-height: 25px;
@@ -1238,11 +1239,14 @@ preview-2
 }
 
 .pri_table_list ol li {
+  font-family: 'Heebo-Light', sans-serif;
   border-bottom: 1px solid #ccc;
-  color: #666;
+  color: #444;
+  font-size: 14px;
   padding: 12px 15px;
   position: relative;
   text-align: left;
+  
 }
 
 .pink-block{
@@ -1304,7 +1308,7 @@ preview-2
 }
 
 .pri_table_list_btn > button:hover {
-  background-color: #fff;
+  background-color: #fff ;
   border: 1px solid #e0b994;
   color: #e0b994;
 }
@@ -1369,6 +1373,136 @@ preview-2
   color: #fff;
   transition: 0.4s;
 }
+/*--------------------------------------------------------------
+# Testimonials
+--------------------------------------------------------------*/
+.testimonials-area {
+  background: rgba(0, 0, 0, 0) url("../img/background/bg2.jpg") no-repeat fixed center top/cover;
+  height: 500px;
+  width: 100%;
+}
+
+.testi-inner {
+  position: relative;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+}
+
+.testi-overly {
+  background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0;
+  height: 500px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.quate {
+  border: 1px dotted #fff;
+  border-radius: 50%;
+  color: #fff;
+  display: inline-block;
+  font-size: 24px;
+  height: 70px;
+  line-height: 70px;
+  width: 70px;
+}
+
+.quate:hover {
+  color: #fff;
+}
+
+.testi-img img {
+  border: 1px dotted rgba(0, 0, 0, 0.05);
+  border-radius: 2px;
+  height: 80px;
+  margin: 0 auto;
+  padding: 5px;
+  transition:  0.6s ease-out 0s;
+  width: 80px !important;
+}
+
+.testi-text p {
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.5em;
+  margin: 40px 0;
+  letter-spacing: 1px;
+}
+
+.testi-text h6 {
+  color: #fff;
+  font-size: 20px;
+}
+
+.testimonial-carousel.owl-carousel.owl-theme .owl-controls .owl-dots div.owl-dot > span {
+  background: #fff none repeat scroll 0 0;
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.testimonial-carousel.owl-carousel.owl-theme .owl-controls .owl-dots {
+  bottom: -30px;
+  display: block;
+  left: 50%;
+  margin-left: -20px;
+  position: absolute;
+}
+
+.testimonial-content {
+  margin-bottom: 15px;
+}
+
+.testimonial-carousel.owl-carousel.owl-theme .owl-controls .owl-dots div.owl-dot {
+  display: inline-block;
+  margin: 0 3px;
+}
+
+.testimonial-carousel.owl-carousel.owl-theme .owl-controls .owl-dots div.owl-dot.active span {
+  background:#e0b994;
+}
+
+.testimonial-carousel .owl-nav,
+.testimonial-carousel .owl-dots {
+  margin-top: 5px;
+  text-align: center;
+}
+
+.testimonial-carousel .owl-dot {
+  display: inline-block;
+  margin: 0 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ddd !important;
+}
+
+.testimonial-carousel .owl-dot.active {
+  background-color: #e0b994 !important;
+}
+
+.testi-text.text-center > h6 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.guest-rev {
+  color: #ddd;
+  font-size: 16px;
+}
+
+.guest-rev > a {
+  color: #e0b994;
+  font-size: 14px;
+}
+
 
 /*--------------------------------------------------------------
 # Contact
@@ -1443,6 +1577,7 @@ preview-2
   transition: all 0.3s ease 0s;
   border-radius: 30px;
 }
+
 .email-form input[type="submit"]:hover{
   background-color: #fff;
   border: 1px solid #e0b994;
@@ -1588,19 +1723,32 @@ preview-2
 --------------------------------------------------------------*/
 .footer-area {
   padding: 40px 0;
-  background: #f9f9f9;
+  background: #05133c;
 }
 
-.footer-head p {
-  color: #444;
-}
 
 .footer-head h4 {
-  color: #444;
+  color: #f5f5f5ad;
   font-size: 16px;
   letter-spacing: 2px;
   padding-bottom: 10px;
   text-transform: uppercase;
+}
+.footer-head p{
+  color: #fff;
+  font-size: 15px;
+
+}
+.footer-head ul li a {
+  color: #fff;
+  font-size: 16px;
+
+
+}
+
+.footer-head ul li a:hover{
+  color:#e0b994;
+
 }
 
 .footer-logo {
@@ -1608,16 +1756,16 @@ preview-2
 }
 
 .footer-logo h2 {
-  color: #222;
+  color: #f5f5f5ad;
   padding: 0;
   margin: 0;
-  font-size: 36px;
+  font-size: 25px;
   font-weight: bold;
   line-height: 1;
 }
 
 .footer-logo h2 span {
-  color: #4473c5;
+  color: #fff;
 }
 
 .footer-icons ul li {
@@ -1625,8 +1773,8 @@ preview-2
 }
 
 .footer-icons ul li a {
-  border: 1px solid #444;
-  color: #444;
+  border: 1px solid #f5f5f5ff;
+  color: #f5f5f5ff;
   display: block;
   font-size: 16px;
   height: 40px;
@@ -1644,14 +1792,20 @@ preview-2
 }
 
 .footer-icons {
-  margin-top: 30px;
+  margin-top: 10px;
 }
+
 
 .footer-contacts p span {
-  color: #4473c5;
+  color:#4473c5;
   font-weight: 700;
+
 }
 
+.footer-contacts p span i{
+  font-size: 17px;
+  padding: 0 4px 0 4px;
+}
 .popular-tag ul li {
   display: inline-block;
 }
@@ -1685,27 +1839,26 @@ preview-2
 }
 
 .footer-area-bottom {
-
-  background: rgba(0, 0, 0, 0.04) none repeat scroll 0 0;
+  background: #05133c none repeat scroll 0 0;
   padding: 15px 0;
 }
 
 .copyright-text a:hover {
   text-decoration: underline;
-  color: #4473c5;
+  color: #e0b994;
 }
 
 .copyright-text a {
-  color: #444;
+  color: #f5f5f5;
 }
 
 .copyright > p {
   margin-bottom: 0;
-  color: #444;
+  color: #f5f5f5;
 }
 
 .copyright a, .credits a {
-  color: #4473c5;
+  color: #f5f8fc;
 }
 
 .credits {

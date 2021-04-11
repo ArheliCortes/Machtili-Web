@@ -50,7 +50,7 @@ list-type-ulli, ul {
 
 .main p {
   margin-bottom: 0px; 
-  color: #797979;
+  color: #ebedf0;
 
 }
 
@@ -67,9 +67,9 @@ list-type-ulli, ul {
   padding: 0;
   font-weight: bold;
   text-align: center;
-  color: #000000;
+  color: #f8f9fa;
   font-family: "Collier Book",sans-serif;
-  font-size: 25px;
+  font-size: 22px;
   margin-bottom: 30px;
  
  }
@@ -85,12 +85,13 @@ list-type-ulli, ul {
   clear: both; }
 
   .main {
-    padding: 80px 0;
-    position: relative; }
+    padding: 0px 0;
+    position: relative; 
+  }
   
   .container-form {
-    width: 356px;
-    background: #fff;
+    width: 368px;
+    background: #04153c;
     border: 2px solid #586f98;
     writing-mode: horizontal-tb;
     border-radius: 50px;
@@ -99,18 +100,37 @@ list-type-ulli, ul {
     -o-border-radius: 50px;
     -ms-border-radius: 50px; 
     display: block;
-  
 
   }
-
+  .container-form label{
+    color: #fff;
+  }
+  .container-form .small{
+    color: #fff;
+    font-size:  11px;
+  }
+  .container-form .text-info-form{
+    font-size:  16px;
+    text-align: center;
+  }
+  .container-form a{
+    font-size:  14px;
+    text-align: center;
+    color: #fff;
+  }
+.container-form a:hover {
+ 
+  color: #e0b994;
+}
 
 .appointment-form {
 
-  padding: 25px 25px 15px 25px; 
+  padding: 45px 30px 45px 25px; 
 }
 
 input, select {
   width: 100%;
+  background-color: #f5f5f5;
   display: block;
   position: relative;
   box-sizing: border-box;
@@ -127,11 +147,13 @@ input, select {
 }
 input:focus, select:focus {
   color: #222;
-  border-bottom: 2px solid #4474c5; }
+  border-bottom: 2px solid #4474c5; 
+}
+  
 select {
     
     background-color: rgb(255, 255, 253);
-    background: #fff url(https://x3jme3vmctf3dmlkql5tzx17-wpengine.netdna-ssl.com/wp-content/themes/aprende/assets/images/ico_arrow_select.svg) right 10px top 50% no-repeat;
+    background: #f5f5f5 url(https://x3jme3vmctf3dmlkql5tzx17-wpengine.netdna-ssl.com/wp-content/themes/aprende/assets/images/ico_arrow_select.svg) right 10px top 50% no-repeat;
     color: #222;
 
 }
@@ -229,7 +251,7 @@ select {
 /* Tablet desktop :768px. */
 @media (min-width: 768px) and (max-width: 991px) {
   .container-form {
-    width: 60%;
+    margin-top: 80px;
   
   } 
   /* aqui cambie */
@@ -255,7 +277,8 @@ select {
     font-size: 13px;
   }
   .container-form {
-    width: 80%;
+    margin-top: 80px;
+    justify-content: center;
   } 
   /* aqui cambie */
   .main .main-container-form{

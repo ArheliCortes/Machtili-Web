@@ -1378,7 +1378,7 @@ preview-2
 --------------------------------------------------------------*/
 .testimonials-area {
   background: rgba(0, 0, 0, 0) url("../img/background/bg2.jpg") no-repeat fixed center top/cover;
-  height: 500px;
+  height: 420px;
   width: 100%;
 }
 
@@ -1391,7 +1391,7 @@ preview-2
 
 .testi-overly {
   background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0;
-  height: 500px;
+  height: 420px;
   left: 0;
   position: absolute;
   top: 0;

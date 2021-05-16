@@ -23,6 +23,7 @@ urlpatterns = [
     path('',core_views.home,name="home"),
     path('info/',core_views.doubt,name="doubt"),
     path('teacher/2021040<int:profesor_id>/',core_views.resume,name="resume"),
+    path('fq/',core_views.team,name="nuestro_equipo"),
     path('uc/',core_views.stop,name="stop"),
     path('admin/', admin.site.urls),
     path('chaining/', include('smart_selects.urls')),

@@ -1,0 +1,41 @@
+{% extends "core/base.html" %}
+{% block title %}Principal{% endblock  %}
+{% load static %}
+{%block header%}
+<header id="header" class="fixed-top">
+  <div class="container d-flex">
+
+    <div class="logo mr-auto">
+      <h1 class="text-light"><a href="{% url 'home'%}">Machtili</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+    </div>
+
+    <nav class="nav-menu d-none d-lg-block">
+      <ul>
+        <li ><a href="#header">Principal</a></li>
+        <li><a href="#pricing">Oferta académica/Planes</a></li>
+        <li><a href="{%url 'stop'%}">Blog</a></li>
+        <li class="active">
+          <div class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Más
+            </a>
+          
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#">Preguntas Frecuentes</a>
+              <a class="dropdown-item" href="#">Únete a nuestro equipo</a>
+            </div>
+          </div>
+        </li>
+        
+
+      </ul>
+    </nav><!-- .nav-menu -->
+  </div>
+</header><!-- End Header -->
+{%endblock%}
+
+{% block content %}
+   <h1>freq_questions</h1>
+{%endblock%}

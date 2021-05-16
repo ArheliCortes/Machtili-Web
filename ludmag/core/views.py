@@ -7,20 +7,26 @@ from django.contrib import messages
 from django.core.mail import EmailMultiAlternatives
 from django.core.mail import BadHeaderError
 from .form import *
-from .models import ProfesorResume,Paragraph
+from .models import ProfesorResume,Paragraph,Service,FrequentlyQuestions
 from django.urls import resolve
 # Global variable
 context = {'form': ClientePotencialForm(),
            'form_doubt':FormDoubts(),
-           'profesor':ProfesorResume.objects.all()}
+           'profesor':ProfesorResume.objects.all(),
+           'servicios': Service.objects.all(),
+           'questions': FrequentlyQuestions.objects.all()
+           }
 template_home = "core/home.html"
 
 def home (request):
-    if request.method == "POST" :
-        response = sendEmailInfo(request)
-    else:  
-        response = render(request,template_home,context)   
-    return response
+    try:
+        if request.method == "POST" :
+            response = sendEmailInfo(request)
+        else:  
+            response = render(request,template_home,context)   
+        return response
+    except KeyError:
+        raise Http404
 
 def resume(request,profesor_id=1):
     try:
@@ -33,6 +39,11 @@ def resume(request,profesor_id=1):
 
     except KeyError:
         raise Http404
+def team(request):
+    template_name="core/frequent_questions.html"
+    return render(request,template_name)
+
+
 
 def doubt (request):
     if request.method == "POST" :

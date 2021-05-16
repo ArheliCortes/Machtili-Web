@@ -16,7 +16,22 @@
         <li class="active"><a href="#header">Principal</a></li>
         <li><a href="#pricing">Oferta académica/Planes</a></li>
         <li><a href="{%url 'stop'%}">Blog</a></li>
-        <li><a href="{%url 'stop'%}">Más</a></li>
+        <li>
+          <div class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             Más
+            </a>
+          
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#faq">Preguntas Frecuentes</a>
+              <a class="dropdown-item" href="{%url 'nuestro_equipo'%}">Nuestro Equipo</a>
+              <a class="dropdown-item" href="#">Únete a nuestro equipo</a>
+            </div>
+          </div>
+
+
+        </li>
+        
 
       </ul>
     </nav><!-- .nav-menu -->
@@ -206,7 +221,7 @@
                         <input type="submit" name="submit" id="submit" class="submit" value="¡Recibir información!"/>
                     </div>
                     <p class="small d-flex justify-content-center">Este sitio esta protegido por reCapTCHA</p>
-                    <a href="#" class="d-flex justify-content-center mt-4">¿Tienes alguna duda?</a>
+                    <a href="#contacto" class="d-flex justify-content-center mt-4">¿Tienes alguna duda?</a>
                   </form>
               </div>
             </div><!--fin main-->
@@ -221,36 +236,38 @@
     
     -->
     
-    <section id="team" class="our-team-area area-padding">
+    <section id="services" class="services-area area-padding">
       <div class="container" data-aos="fade-up">
         <div class="row">
           <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="section-headline-mamey  text-center">
+            <div class="section-headline-red  text-center">
               <h2>Servicios</h2>
             </div>
           </div>
         </div>
-
-        <div class="row d-flex justify-content-center" >
-        {% for pf in profesor %}
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="member">
-              <img src="{{pf.urlImage.url}}" />
-              <div class="member-info">
-                <div class="member-info-content">
-                  <h4>Lic. {{pf.name}} {{pf.paternal_surname}}</h4>
-                  <span>{{pf.description}}</span>
-                  <div class="social">
-                    <a href="{%url 'resume' profesor_id=pf.id%}"><i class="fa fa-plus"></i></a>
-                  </div>
+   
+        <div class="row ">
+          {% for sv in servicios %}
+            <div class="col-md-4 col-sm-12 col-xs-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+              <div class="card" style="width: 16rem;">
+                <img class="card-img-top" src="{{sv.urlImage.url}}" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-prom">
+                    <i class="fa fa-gift" aria-hidden="true"></i>
+                    {{sv.promotion}}
+                  </p>
+                  <p class="card-text text-justify">
+                    {{sv.description}}
+                  </p>
+                  <p class="cost">${{sv.cost}}.00</p>
                 </div>
               </div>
             </div>
-          </div>
-        {%endfor%}   
+          {%endfor%}       
 
-        </div>
-
+      </div>
+      <div class="margin d-flex justify-content-center">
+        <button >Ver más</button>
       </div>
     </section><!-- End Team Section -->
    
@@ -416,27 +433,27 @@
                       <div class="single-testi">
                         <div class="testi-text">
                           <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue.<br>consectetur adipiscing elit. Sed pulvinar luctus est eget congue.
+                            “La enseñanza que deja huella no es la que se hace cara a cara, sino la que se hace de corazón a corazón” 
                           </p>
-                          <h6>Boby</h6>
+                          <h6>H.G. Hendrics</h6>
                         </div>
                       </div>
                       <!-- End single item -->
                       <div class="single-testi">
                         <div class="testi-text">
                           <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue.<br>consectetur adipiscing elit. Sed pulvinar luctus est eget congue.
+                            El compromiso de un gran maestro es despertar en sus alumnos la curiosidad y el hambre de conocimiento.
                           </p>
-                          <h6>Jhon</h6>
+               
                         </div>
                       </div>
                       <!-- End single item -->
                       <div class="single-testi">
                         <div class="testi-text">
                           <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pulvinar luctus est eget congue.<br>consectetur adipiscing elit. Sed pulvinar luctus est eget congue.
+                            “Dime, y lo olvido. Enséñame, y lo recuerdo. Involúcrame, y lo aprendo”
                           </p>
-                          <h6>Fleming</h6>
+                          <h6>Benjamín Franklin</h6>
                         </div>
                       </div>
                       <!-- End single item -->
@@ -449,14 +466,62 @@
             </div>
           </div>
         </div><!-- End Testimonials Section -->
-  
-   
+  <!-- ======= Frequently Asked Questions Section ======= -->
+    <section id="faq" class="faq section-bg-fq">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="section-headline-red text-center">
+              <h2>Preguntas Frecuentes</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-list">
+          <ul>
+            {% for q in questions %}
+              {% if forloop.first %}
+                <li data-aos="fade-up">
+                  <i class="fa fa-question-circle-o icon-help" aria-hidden="true"  ></i>
+                  <a data-toggle="collapse" class="collapse" href="#faq-list-1">
+                      {{q.question}}<i class="fa fa-chevron-down icon-show">
+                      </i><i class="fa fa-chevron-up icon-close" aria-hidden="true"></i>
+                  </a>
+                  <div id="faq-list-1" class="collapse show" data-parent=".faq-list">
+                    <p>
+                      {{q.answer|safe}}
+                    </p>
+                  </div>
+                </li>
+              {% else %}
+                <li data-aos="fade-up">
+                  <i class="fa fa-question-circle-o icon-help" aria-hidden="true"  ></i>
+                  <a data-toggle="collapse" class="collapse" href="#faq-list-{{ forloop.counter }}">
+                    <i class="fa fa-chevron-down icon-show"></i>
+                      {{q.question}}<i class="fa fa-chevron-up icon-close" aria-hidden="true"></i>
+                  </a>
+                  <div id="faq-list-{{forloop.counter}}"class="collapse" data-parent=".faq-list">
+                    <p>
+                      <span>{{q.answer|safe}}</span>                
+                    </p>
+                  </div>
+                </li>
+              {% endif %}
+            {%endfor%} 
+      
+
+          </ul>
+        </div>
+
+      </div>
+    </section><!-- End Frequently Asked Questions Section -->
+
     <!-- ======= Contact Section ======= -->
-    <div id="contact" class="contact-area area-padding">
+    <div id="contacto" class="contact-area area-padding">
       <div class="container ">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-              <div class="section-headline-mamey text-center">
+              <div class="section-headline-dorado text-center">
                 <h2>¿Tienes alguna duda? Escribenos.</h2>
               </div>
             </div>
@@ -493,93 +558,14 @@
 
   </div><!-- End #main -->
        <!-- ======= Footer ======= -->
-   <!-- ======= Footer ======= -->
-   <footer>
-    <div class="footer-area">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-5 col-sm-4 col-xs-12">
-            <div class="footer-content">
-              <div class="footer-head">
-                <h4>Contacto</h4>
-           
-                <div class="footer-contacts">
-                  <p><span><i class="fa fa-whatsapp"></i></span>  55 7979 0890</p>
-                  <p><span><i class="fa fa-envelope-o"></i></span> contacto@machtili.com.mx</p>
-                  <p><span>Horario de Trabajo:</span> Lunes-Viernes (9am-9pm)</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- end single footer -->
-          <div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="footer-content">
-              <div class="footer-head">
-                <div class="footer-logo">
-                  <h2>Machtili</h2>
-                </div>
-                <ul>
-                  <li class="mb-2">
-                    <a href="#">Nuestro Equipo</a>
-                  </li>
-                  <li class="mb-2">
-                    <a href="#">Únete a nuestro equipo</a>
-                    
-                  </li>
-                  <li class="mb-2">
-                    <a href="#">Preguntas Frecuentes</a>
-                  </li>
-               
-                </ul>
-           
-            
-              </div>
-            </div>
-          </div>
-          <!-- end single footer -->
-   
-          <div class="col-md-3 col-sm-4 col-xs-12">
-            <div class="footer-content">
-              <div class="footer-head">
-                <h4>Síguenos</h4>
-                <div class="footer-icons">
-                  <ul>
-                    <li>
-                      <a href="#"><i class="fa fa-facebook"></i></a>
-                    </li>
-                 
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="footer-area-bottom">
-      <div class="container">
-        <div class="row">
-        
-          <div class="col-md-12 col-sm-12 col-xs-12 mt-4">
-            <div class="copyright text-center">
-              <p>
-                &copy; Copyright 2020 <strong>Machtili</strong>
-              </p>
-            </div>
-        
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer><!-- End  Footer -->
+  
   
 
 {% endblock%}
 
 
 
- {% block script%}
+{% block script%}
     <script type="text/javascript" src="{% static '/smart-selects/admin/js/chainedfk.js' %}"></script>
     <script type="text/javascript" src="{% static '/smart-selects/admin/js/bindfields.js' %}"></script>
     <script type="text/javascript" src="{% static '/smart-selects/admin/js/chainedm2m.js' %}"></script>

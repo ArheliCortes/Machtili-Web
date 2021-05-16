@@ -22,8 +22,16 @@ class ProfesorAdmin(admin.ModelAdmin):
      inlines = [ParagraphInline,]
      def save_model(self, request, obj, form, change):
         obj.save()
+class ServicesAdmin(admin.ModelAdmin):
+    list_display = ("name","promotion","description","cost","urlImage")
+
+class FreqQuestAdmin(admin.ModelAdmin):
+    list_display = ("question","answer")
+
 admin.site.register(Plan,PlanAdmin)
 admin.site.register(Curso, CursoAdmin)
 admin.site.register(Grado, GradoAdmin)
 admin.site.register(ClientePotencial, ClientePotencialAdmin)
 admin.site.register(ProfesorResume,ProfesorAdmin)
+admin.site.register(Service, ServicesAdmin)
+admin.site.register(FrequentlyQuestions, FreqQuestAdmin)

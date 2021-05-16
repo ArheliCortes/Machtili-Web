@@ -10,7 +10,6 @@
 # General
 --------------------------------------------------------------*/
 
-
 .floatleft {
   float: left;
 }
@@ -110,9 +109,9 @@ a:active, a:hover {
 }
 
 body {
-  background: #fff none repeat scroll 0 0;
+  background: #05133c none repeat scroll 0 0;
   color: #444;
-  font-family: 'Heebo-Light', sans-serif;
+  font-family: 'Avantgarde', 'TeX Gyre Adventor', 'URW Gothic L', sans-serif;
   font-size: 14px;
   text-align: left;
   overflow-x: hidden;
@@ -193,7 +192,7 @@ div#preloader {
 }
 
 .area-padding {
-  padding: 70px 0px 80px;
+  padding: 80px 0px 80px;
 }
 
 .area-padding-2 {
@@ -208,7 +207,6 @@ div#preloader {
 /*---------------------new-----------------------*/
 .section-headline-red h2 {
   display: inline-block;
-  font-size: 40px;
   font-weight: 600;
   margin-bottom: 70px;
   position: relative;
@@ -225,17 +223,16 @@ div#preloader {
   right: 0;
   width: 40%;
 }
-.section-headline-mamey h2 {
+.section-headline-dorado h2 {
   display: inline-block;
-  font-size: 40px;
   font-weight: 600;
   margin-bottom: 70px;
   position: relative;
   text-transform: uppercase;
 }
 
-.section-headline-mamey h2::after {
-  border: 1px solid #e0b994;
+.section-headline-dorado h2::after {
+  border: 1px solid #b48105;
   bottom: -20px;
   content: "";
   left: 0;
@@ -246,7 +243,6 @@ div#preloader {
 }
 .section-headline-blue h2 {
   display: inline-block;
-  font-size: 40px;
   font-weight: 600;
   margin-bottom: 70px;
   position: relative;
@@ -265,7 +261,6 @@ div#preloader {
 }
 .section-headline-yellow h2 {
   display: inline-block;
-  font-size: 40px;
   font-weight: 600;
   margin-bottom: 70px;
   position: relative;
@@ -337,6 +332,25 @@ div#preloader {
   max-height: 40px;
 }
 
+.dropdown .btn-secondary {
+  color: #fff;
+  background-color: #6c757d05;
+  border-color: #6c757d05;
+}
+.dropdown .btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
+  color: #e0b994;
+  background-color: #545b6200;
+  border-color: #4e555b00;
+}
+.dropdown .dropdown-item {
+  background:rgba(0,0,0,0.5);
+}
+
+
+.dropdown .btn-secondary:not(:disabled):not(.disabled).active:focus, .btn-secondary:not(:disabled):not(.disabled):active:focus, .show>.btn-secondary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgb(130 138 145 / 0%);
+}
+
 @media (max-width: 768px) {
   #header {
     height: 60px;
@@ -395,7 +409,7 @@ div#preloader {
   color: #fff;
   padding: 8px 15px 12px 15px;
   transition: 0.3s;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
@@ -1094,7 +1108,7 @@ preview-2
 # Team
 --------------------------------------------------------------*/
 .our-team-area {
-  background-color: #f5f8fc;
+  background-color: #f5f5f5;
 }
 
 #team {
@@ -1166,6 +1180,64 @@ preview-2
   font-size: 20px;
   margin: 0 2px;
 }
+
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+.services-area {
+  background-color: #f5f5f5;
+}
+.card-body {
+  background-color: #f5f5f5;
+  padding: 1rem;
+}
+
+.card {
+  border-style: none;
+}
+.card-body .card-prom{
+  color: #4475c5;
+  font-size: 15px;
+  text-align: center;
+
+}
+.card-body i{
+  color: #4475c5;
+  font-size: 17px;
+  padding: 10px;
+  
+}
+.card-body .card-text{
+  font-family: 'Heebo-Light', sans-serif;
+  font-size: medium;
+}
+.card-body .cost{
+  color: #757575;
+  font-size: 15px;
+  text-align: center;
+
+}
+.services-area .margin{
+  margin-top: 4rem;
+}
+.services-area button {
+  background: #f5f5f5 none repeat scroll 0 0;
+  border: 1px solid #4474c5;
+  color: #4474c5;
+  margin-bottom: 25px;
+  padding: 10px 35px;
+  text-transform: uppercase;
+  transition: all 0.4s ease 0s;
+  border-radius: 30px;
+}
+
+.services-area button:hover {
+  background-color: #f5f5f5;
+  border: 1px solid #e0b994;
+  color: #e0b994;
+}
+
+
 
 /*--------------------------------------------------------------
 # Pricing
@@ -1502,7 +1574,102 @@ preview-2
   color: #e0b994;
   font-size: 14px;
 }
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+}
 
+
+/*--------------------------------------------------------------
+# Frequently Asked Questions
+--------------------------------------------------------------*/
+.section-bg-fq {
+  background-color: #fafafa;
+}
+.faq .faq-list {
+  padding: 0 100px;
+}
+
+.faq .faq-list ul {
+  padding: 0;
+  list-style: none;
+}
+
+.faq .faq-list li + li {
+  margin-top: 15px;
+}
+
+.faq .faq-list li {
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+  position: relative;
+}
+
+.faq .faq-list a {
+  color: #343a40;
+  display: block;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  padding: 0 30px;
+  outline: none;
+}
+.faq .faq-list a:hover {
+  color: #588be9;
+  text-decoration: none;
+}
+
+
+.faq .faq-list .icon-help {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  left: 20px;
+  color: #03a9f4;
+}
+
+.faq .faq-list .icon-show, .faq .faq-list .icon-close {
+  font-size: 16px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.faq .faq-list p {
+  margin-bottom: 0;
+  padding: 10px 0 0 0;
+}
+
+.faq .faq-list .icon-show {
+  display: none;
+}
+
+.faq .faq-list a.collapsed {
+  color: #343a40;
+}
+
+.faq .faq-list a.collapsed:hover {
+  color: #4475c5;
+}
+
+.faq .faq-list a.collapsed .icon-show {
+  display: inline-block;
+}
+
+.faq .faq-list a.collapsed .icon-close {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .faq .faq-list {
+    padding: 0;
+  }
+}
 
 /*--------------------------------------------------------------
 # Contact
@@ -1566,7 +1733,7 @@ preview-2
 }
 
 .email-form input[type="submit"] {
-  background: #ffffff none repeat scroll 0 0;
+  background: #f5f5f5 none repeat scroll 0 0;
   border: 1px solid #4474c5;
   color: #4474c5;
   font-size: 16px;
@@ -1579,7 +1746,7 @@ preview-2
 }
 
 .email-form input[type="submit"]:hover{
-  background-color: #fff;
+  background-color: #f5f5f5;
   border: 1px solid #e0b994;
   color: #e0b994;
   

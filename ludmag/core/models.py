@@ -73,9 +73,13 @@ class Paragraph(models.Model):
     description= models.TextField()
 
 #Servicios
-class Servicios(models.Model):
+class Service(models.Model):
     name = models.CharField(max_length=100,verbose_name="Nombre")
     promotion = models.CharField(max_length=100,verbose_name="Promoción")
     description = models.TextField(verbose_name = "Descripción")
     cost = models.CharField(max_length=15,verbose_name="Costo")
     urlImage = models.ImageField(upload_to='services/',verbose_name = "Foto del Servicio")
+
+class FrequentlyQuestions(models.Model):
+    question = models.CharField(max_length=200,verbose_name="Pregunta")
+    answer = models.TextField()
